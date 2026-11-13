@@ -11,7 +11,12 @@ YouTube Shorts. Planned run: 180 episodes, city → collapse → mountains → s
 - Local LoRA fallback (Animagine + kohya in `~/lora/sd-scripts`) is postponed; the user installs the trainer venv.
 - Keys live in `.env` (chmod 600). Never print them.
 
-## Make episode N (run from this folder with `.venv/bin/python`)
+## Make episode N
+**One command:** `python3 run_day.py` does every step below (resumable; state in Drive `_state/`). The unattended
+daily routine follows `ROUTINE.md` (checks to do yourself, when to stop). Cloud setup: `cloud_setup.sh`.
+Thumbnails: `make_thumb.py`; reel covers 1080x1920: `make_covers.py`; the day's kit + thumbnail: `write_kit.py`.
+
+The steps it runs (by hand: from this folder with `.venv/bin/python`):
 1. Move the last episode's working files into `ep{N-1:02d}/`: story.json STORY.md frames frames_v build audio reels
    reels.json reels_audio REELS.md and the episode mp4s. `refs/`, `voices.json`, `sfx_kit/` stay (shared).
 2. `write_episode.py N` → story.json + STORY.md (continues from `ep{N-1}/story.json`, keeps character tags).

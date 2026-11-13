@@ -31,3 +31,13 @@ ep*/*
 !ep*/story.json
 !ep*/STORY.md
 !ep*/reels.json
+
+# logo drafts (large, not needed by the pipeline)
+brand/
+old_audio/
+
+# daily run state and logs
+state.json
+kit.json
+run_day.log
+fonts/

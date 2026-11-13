@@ -1,15 +1,25 @@
 """Pillow text rendering shared by the film and reels (this ffmpeg build has no drawtext/libass)."""
+import pathlib
 from PIL import Image, ImageDraw, ImageFont
 
 BOLD = "/System/Library/Fonts/Supplemental/Arial Rounded Bold.ttf"
 SERIF = "/System/Library/Fonts/Supplemental/Didot.ttc"
 
 
+# On Linux (the cloud routine) the Apple fonts are missing: fall back to M PLUS Rounded 1c ExtraBold (OFL, fetched
+# into fonts/ by the setup script), then DejaVu Sans Bold.
+FALLBACKS = [pathlib.Path(__file__).with_name("fonts") / "MPLUSRounded1c-ExtraBold.ttf",
+             "/usr/local/share/fonts/MPLUSRounded1c-ExtraBold.ttf", "/System/Library/Fonts/Helvetica.ttc",
+             "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"]
+
+
 def font(path, size):
-    try:
-        return ImageFont.truetype(path, size)
-    except OSError:
-        return ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", size)
+    for p in [path, *FALLBACKS]:
+        try:
+            return ImageFont.truetype(str(p), size)
+        except OSError:
+            continue
+    return ImageFont.load_default(size)
 
 
 def wrap(draw, text, f, max_w):

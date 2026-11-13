@@ -89,6 +89,25 @@ class Drive:
         self.e["DRIVE_ROOT_ID"] = rid
         return rid
 
+    def list(self, parent):
+        q = f"'{parent}' in parents and trashed = false"
+        return self.call("files", {"q": q, "fields": "files(id,name,size,mimeType)", "pageSize": 1000})["files"]
+
+    def download(self, file_id, dest):
+        dest = pathlib.Path(dest); dest.parent.mkdir(parents=True, exist_ok=True)
+        r = urllib.request.Request(f"{API}/files/{file_id}?alt=media", headers={"Authorization": f"Bearer {self.token()}"})
+        with urllib.request.urlopen(r, timeout=300) as resp, dest.open("wb") as fh:
+            while chunk := resp.read(1 << 20):
+                fh.write(chunk)
+        return dest
+
+    def replace(self, path, parent):
+        """Upload, overwriting a same-name file (for state files that change every day)."""
+        old = self.find(pathlib.Path(path).name, parent)
+        if old:
+            self.call(f"files/{old['id']}", method="DELETE")
+        return self.upload(path, parent)
+
     def upload(self, path, parent, chunk=32 * 1024 * 1024):
         """Resumable upload in chunks; skips a file already there with the same name and size."""
         path = pathlib.Path(path)
