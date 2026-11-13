@@ -51,3 +51,6 @@ Don't use `pgrep -f` with a pattern that also matches the waiting shell's own co
   each rehook and the CTA (`sfx_kit.py` once, used by `mix.py` and `make_reels.py`). Kit is ElevenLabs-made, so no
   licence checks; if outside sounds are ever used (e.g. Openverse), check each licence.
 - Reels always carry burned-in captions: narrator word by word (yellow active word), character lines in blue.
+
+## Reference reels (required)
+Before writing or reviewing any reel, read REFERENCE_REELS.md and apply its rules and scoring in the three-way review.

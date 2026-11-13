@@ -97,3 +97,6 @@ Caption: Would you take more questionable water or protect a smaller supply? Wat
   _shot 17_
 
 Caption: The pipes, speakers, and missing birds may share one signal. Comment SIGNAL for the full five-minute episode. #AnimeMystery #HiddenClues #MysteryTheory #TheMorningWithoutBirds #AnimeReel
+
+## Reference reels
+Every reel must follow REFERENCE_REELS.md: hook on screen in 0-2 s, story loop with rehook, payoff, a visual change every 2-4 s, and a comment CTA.
