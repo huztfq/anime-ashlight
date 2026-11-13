@@ -56,3 +56,6 @@ Don't use `pgrep -f` with a pattern that also matches the waiting shell's own co
 
 ## Reference reels (required)
 Before writing or reviewing any reel, read REFERENCE_REELS.md and apply its rules and scoring in the three-way review.
+
+## World shorts
+Standalone "From the world of AFTER THE HUM" shorts (YouTube Shorts + Instagram Reels) follow WORLD_SHORTS.md.
