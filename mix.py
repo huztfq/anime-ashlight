@@ -1,5 +1,10 @@
 """Mix score (ducked under voices) + per-shot SFX + narration + character lines. Usage: mix.py out.m4a [lo-hi]"""
 import json, pathlib, subprocess, sys
+try:  # cleaned + loudness-matched voices (voicefx.py); returns the raw file on any failure
+    from voicefx import process as voice_fx
+except Exception:  # keep the old behaviour if the module is missing or broken
+    def voice_fx(path, kind):
+        return path
 
 TITLE_S, SHOT_S, END_S = 0, 12, 9  # hook-first: no title card before shot 1
 SCORE_OFFSET = 6  # the score was composed with a 6s intro; start on the music
@@ -33,11 +38,11 @@ def mix(out, lo=1, hi=None):
         t = t0 + 0.6
         vo = A / f"vo{s['id']:02d}.mp3"
         if vo.exists():
-            add(vo, t, f"v{s['id']}"); voice.append(f"[v{s['id']}]")
+            add(voice_fx(vo, "narration"), t, f"v{s['id']}"); voice.append(f"[v{s['id']}]")
             t += dur(vo) + 0.4
         line = A / f"line{s['id']:02d}.mp3"
         if line.exists():
-            add(line, min(t, t0 + SHOT_S - dur(line) - 0.2), f"l{s['id']}"); voice.append(f"[l{s['id']}]")
+            add(voice_fx(line, "dialogue"), min(t, t0 + SHOT_S - dur(line) - 0.2), f"l{s['id']}"); voice.append(f"[l{s['id']}]")
     # sound design on the text cards (same times as assemble.py): boom under the hook, riser + hit into each rehook and the CTA
     fx, kit = [], pathlib.Path("sfx_kit")
     cues = [("boom", 0, 0.8)]

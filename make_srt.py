@@ -1,4 +1,6 @@
-"""YouTube subtitles for the episode, timed the same way mix.py places the voices. Usage: make_srt.py out.srt"""
+"""YouTube subtitles for the episode, timed the same way mix.py places the voices. Usage: make_srt.py out.srt
+Narration (Nara's voice-over) is in <i>italics</i>; spoken lines are upright and start with the speaker's name, so
+viewers can tell the two apart (YouTube renders <i> in uploaded .srt files)."""
 import json, pathlib, sys
 from mix import dur, SHOT_S, TITLE_S
 
@@ -27,7 +29,7 @@ for s in STORY["shots"]:
             if chunk:
                 a = t + d * (0 if k == 0 else half / len(words))
                 b = t + d * (half / len(words) if k == 0 else 1)
-                cues.append((a, b, " ".join(chunk)))
+                cues.append((a, b, f"<i>{' '.join(chunk)}</i>"))  # narration in italics, dialogue upright with a name
         t += d + 0.4
     line = A / f"line{s['id']:02d}.mp3"
     if line.exists():

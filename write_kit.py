@@ -25,6 +25,27 @@ for e in series.get("episodes", []):
         NEXT_TITLE = e.get("title", "")
 
 
+def premise(n):
+    """1-2 plain lines on what is going on, true for episode n (viewers asked "has the world ended?")."""
+    import re
+    fall = None
+    for m in series.get("months", []):
+        for tp in m.get("turning_points", []):
+            hit = re.match(r"Episode (\d+):.*Quietfall", tp)
+            if hit and fall is None:
+                fall = int(hit.group(1))
+    since = ("the city has collapsed (no power, no safe water, and people the signal took over)"
+             if fall and n >= fall else "the city has been breaking down one system at a time")
+    return ("The story so far: at 7:17 one morning, every phone in the city of Meridian let out the same three-second "
+            f"tone, the Hum. Since then {since}, and bike courier Nara Venn is trying to keep her people alive.")
+
+
+try:
+    PREMISE = premise(N)
+except Exception:  # never break the kit over this line
+    PREMISE = ""
+
+
 def mmss(t):
     return f"{int(t // 60)}:{int(t % 60):02d}"
 
@@ -107,10 +128,12 @@ md += ["", f"Episode {N}'s own reel covers ({E}_reel1-4_cover.jpg) are in today'
 md += [f"- {t}" for t in kit["titles"]]
 chap = "\n".join(f"{c['start']} {c['label']}" for c in kit["chapters"])
 md += ["", "**Description**", "", "```", kit["description_hook"], "", kit["description_body"], "",
+       *([PREMISE, ""] if PREMISE else []),
+       "New episode every day. Voices and visuals are AI-generated.", "",
        "AFTER THE HUM is an original dark anime survival series. A new 5-minute episode every day: from a normal city, "
        "through the collapse, into the mountains and the fight to build a sanctuary.", "",
        "▶ Start from Episode 1: [link to Episode 1]", "▶ Full series playlist: [playlist link]", "", "Chapters", chap, "",
-       f"New episode every day. Subscribe so you don't miss Episode {N + 1}" + (f": {NEXT_TITLE}." if NEXT_TITLE else "."),
+       f"Subscribe so you don't miss Episode {N + 1}" + (f": {NEXT_TITLE}." if NEXT_TITLE else "."),
        "", "Survival notes in this series are part of the story, not safety advice.", "", kit["hashtags"], "```", "",
        f"**Tags:** {', '.join(kit['tags'])}", "",
        "| Setting | Value |", "| --- | --- |",

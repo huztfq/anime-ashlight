@@ -17,6 +17,14 @@ VOICES_FILE = pathlib.Path("voices.json")
 TONE = {"calm": (0.6, 0.2), "whisper": (0.55, 0.3), "tense": (0.45, 0.4), "urgent": (0.38, 0.5)}
 # stock voices to fall back on when designing one is refused (e.g. child voices)
 FALLBACK = {"narrator": "pFZP5JQG7iQjIQuC4Bku", "female": "EXAVITQu4vr4xnSDxMaL", "male": "JBFqnCBsd6RMkjVDRZzb"}
+# 2026-11-14: viewers said "the male voice" sounded like a bad mic. The designed Jun/Lio voices were thin and
+# band-limited (Lio rolled off near 4 kHz) with an audible noise floor, and Jun (a 17-year-old girl in series.json)
+# had been designed with a low, male-sounding voice. ElevenLabs refuses to design voices for under-18 characters, so
+# both moved to clean, full-band premade voices in voices.json (Jun: "Jessica", young bright American female;
+# Lio: "Liam", young American male). If a voice ever fails, the line is retried with the previous voice below.
+PREVIOUS = {"jun": "CxmVLC0zdI88j2zfLOeX", "lio": "1CuQEihJU6LyGS2focVP"}
+# appended to every designed voice: without it the design model often returns lo-fi, "phone mic" audio
+QUALITY = " Perfect studio audio quality: crisp, clear, full-bandwidth close-mic recording, no background noise."
 
 
 def log(what, r):
@@ -28,7 +36,8 @@ def log(what, r):
 def design_voice(name, description, sample):
     """Create a voice from a text description (for characters no stock voice fits)."""
     r = requests.post(f"{API}/text-to-voice/design", headers=H, timeout=300, json={
-        "voice_description": description, "text": sample, "model_id": "eleven_multilingual_ttv_v2"})
+        "voice_description": description[:1000 - len(QUALITY)] + QUALITY, "text": sample,
+        "model_id": "eleven_multilingual_ttv_v2"})
     r.raise_for_status(); log(f"design-{name}", r)
     gid = r.json()["previews"][0]["generated_voice_id"]
     r = requests.post(f"{API}/text-to-voice", headers=H, timeout=120, json={
@@ -77,6 +86,15 @@ def tts(voice, text, dest, what, stability=0.5, style=0.3):
                 voice_settings={"stability": stability, "similarity_boost": 0.8, "style": style})
 
 
+def line_tts(v, line, dest, what):
+    """A character line; if the character's voice errors, retry once with their previous voice."""
+    res = tts(v[line["character"]], line["text"], dest, what)
+    old = PREVIOUS.get(line["character"])
+    if "ERROR" in res and old and old != v[line["character"]]:
+        res = f"{res} | retry with previous voice: " + tts(old, line["text"], dest, what)
+    return res
+
+
 if __name__ == "__main__":
     v = voices()
     jobs = []
@@ -87,7 +105,7 @@ if __name__ == "__main__":
             jobs.append(lambda s=s, i=i, a=stab, b=style: tts(v["narrator"], s["narration"], OUT / f"vo{i:02d}.mp3", f"vo{i}", a, b))
         line = s.get("line") or {}
         if line.get("text") and line.get("character") in v:
-            jobs.append(lambda s=s, i=i, line=line: tts(v[line["character"]], line["text"], OUT / f"line{i:02d}.mp3", f"line{i}"))
+            jobs.append(lambda s=s, i=i, line=line: line_tts(v, line, OUT / f"line{i:02d}.mp3", f"line{i}"))
         jobs.append(lambda s=s, i=i: post("sound-generation?output_format=mp3_44100_192", OUT / f"sfx{i:02d}.mp3",
                                           f"sfx{i}", text=f"Ambience only, no music: {s['sfx']}",
                                           duration_seconds=SHOT_S, prompt_influence=0.5))

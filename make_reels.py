@@ -3,7 +3,7 @@ lines, word-by-word captions, on-screen hook (0-3s) and CTA, ducked score + shot
 Usage: make_reels.py [reel ids...]"""
 import json, pathlib, subprocess, sys
 from PIL import Image
-from mix import dur, SCORE_OFFSET, SHOT_S
+from mix import dur, SCORE_OFFSET, SHOT_S, voice_fx
 from textcards import banner
 from motion import kinetic
 
@@ -123,13 +123,13 @@ def audio(r, tl, total, work):
 
     for i, (st, _, _, segs, vo) in enumerate(tl):
         if vo:
-            add(vo, st, f"v{i}"); voice.append(f"[v{i}]")
+            add(voice_fx(vo, "narration"), st, f"v{i}"); voice.append(f"[v{i}]")
         for k, (shot, s0, l, use_line) in enumerate(segs):
             add(A / f"sfx{shot:02d}.mp3", s0, f"a{i}_{k}", f"atrim=0:{l},afade=in:d=0.15,afade=out:st={max(0, l-0.2)}:d=0.2,")
             amb.append(f"[a{i}_{k}]")
             line = A / f"line{shot:02d}.mp3"
             if use_line and line.exists():
-                add(line, s0 + 0.2, f"l{i}_{k}"); voice.append(f"[l{i}_{k}]")
+                add(voice_fx(line, "dialogue"), s0 + 0.2, f"l{i}_{k}"); voice.append(f"[l{i}_{k}]")
     # sound design on the exact frame: boom under the hook, whoosh on every cut, riser into each rehook, hit on rehooks + CTA
     fx = []
     def kit(name, t, vol):

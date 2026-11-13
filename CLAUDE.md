@@ -7,6 +7,8 @@ YouTube Shorts. Planned run: 180 episodes, city → collapse → mountains → s
 - Images: Qwen-Image 3.0 Pro (DashScope API), dark gritty seinen style matched to `style_ref/dark_gritty_qwen.png`.
 - Writing: OpenAI `gpt-5.6-sol`, reasoning effort high.
 - Audio: ElevenLabs. Narrator = V1 "husky" (voice id in `voices.json` → `narrator`), score style = M1 dark ambient.
+  Jun = premade "Jessica", Lio = premade "Liam" (2026-11-14, clearer voices). Voices pass through `voicefx.py`.
+- Every episode: shot 2 is a narrated premise recap (`write_episode.py`); cliffhangers stay as they are.
 - Channel: Ashlight Stories, suggested handle @ashlightanime (not confirmed). Logo not picked yet (`brand/logo2_*`).
 - Local LoRA fallback (Animagine + kohya in `~/lora/sd-scripts`) is postponed; the user installs the trainer venv.
 - Keys live in `.env` (chmod 600). Never print them.

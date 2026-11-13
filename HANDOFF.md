@@ -223,6 +223,19 @@ viewing, so the lessons are already written into `hooks.py` (fed to every writer
 - **Never** paint captions or titles into the generated images; all text is added in editing. **No** gore, corpses,
   weapons or zombies.
 
+## Changes from viewer feedback (2026-11-14)
+
+- **Premise recap:** `write_episode.py` makes shot 2 a fresh narrated recap (what the Hum is, how far the city has
+  fallen, where the characters are now) and keeps the world state clear in the episode. The YouTube description in the
+  kit has a "The story so far" line plus "New episode every day. Voices and visuals are AI-generated." Don't add a
+  season length or episode count (the user said no).
+- **Voices:** Jun (a 17-year-old girl in the bible) had a low, lo-fi designed voice and Lio's was band-limited, which
+  viewers heard as "a bad mic". Both now use premade ElevenLabs voices (Jessica, Liam); `audio.py` retries a line
+  with the previous voice if one fails. ElevenLabs refuses to design under-18 voices, so pick premade voices for teens.
+- **Narration vs dialogue:** `voicefx.py` (narration warm with a soft room tail, dialogue dry and present, all clips
+  loudness-matched); narration subtitles in italics. Reels already colour narrator vs lines.
+- **Cliffhangers are unchanged** on purpose.
+
 ## Known gaps and what to watch
 
 - **`series.json` only outlines episodes 1–14.** `write_episode.py` looks up `episodes[n]` and will crash on
