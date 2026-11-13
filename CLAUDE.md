@@ -29,6 +29,10 @@ YouTube Shorts. Planned run: 180 episodes, city → collapse → mountains → s
    `upload/epNN_*` file. Stdlib only, re-runnable (skips files already there). Auth: `GOOGLE_CLIENT_ID`,
    `GOOGLE_CLIENT_SECRET`, `GOOGLE_REFRESH_TOKEN` in `.env` (one-time `google_auth.py`); `DRIVE_ROOT_ID` is set
    automatically. Scope is drive.file, so the app only sees the folders it made.
+9. Notion: write the kit as `upload/epNN_upload_kit.md` (a Drive-folder callout on top, a to-do checklist at the end),
+   then `notion.page("Day N · YYYY-MM-DD · Episode N upload kit", md, icon="🎬")`. If CLAUDE.md changed,
+   `python3 notion.py page "Production Guide" CLAUDE.md` (same title replaces the page's contents). Integration
+   "inferaform"; `NOTION_TOKEN` and `NOTION_ROOT_PAGE` in `.env`.
 
 Don't use `pgrep -f` with a pattern that also matches the waiting shell's own command line; use `"[q]wen_frames"`.
 
