@@ -1,0 +1,579 @@
+{
+  "title": "Three Seconds at 7:17",
+  "logline": "During an ordinary courier shift, every phone in Meridian emits the same impossible tone. Nara secures an analog emergency pouch, avoids a stalled elevator and discovers that an undeliverable package contains a tape speaking directly to her.",
+  "hook_text": "EVERY PHONE SCREAMED",
+  "cta_text": "Tomorrow, we find out what the second siren starts. Subscribe and watch Episode 2.",
+  "narrator_voice": "A young woman in her mid-twenties narrating a dark survival story. Low, slightly husky, calm and tired, speaking close to the microphone like a late-night confession. American accent, natural, never theatrical.",
+  "narrator_character": "nara",
+  "characters": [
+    {
+      "id": "nara",
+      "name": "Nara Venn",
+      "tags": "young woman, 24, short black bob, fixed white streak at left temple, amber eyes, mustard scarf, charcoal courier jacket, silver triangle ear cuff, black cargo trousers",
+      "voice": "Low, intimate and direct; restrained emotion and dry humor.",
+      "bio": "A fast-thinking bike courier who prefers leaving before anyone can depend on her.",
+      "on_screen": true
+    },
+    {
+      "id": "jun",
+      "name": "Jun Arai",
+      "tags": "teenage girl, 17, feminine face, chin-length dense auburn curls, teal over-ear headphones around neck, yellow rain shell, narrow black gloves, analog wristwatch",
+      "voice": "Quick, precise and slightly breathless; technical ideas stated simply.",
+      "bio": "An electronics apprentice whose confidence hides her fear of being dismissed as a child.",
+      "on_screen": true
+    },
+    {
+      "id": "lio",
+      "name": "Lio Calder",
+      "tags": "young boy, 14, short messy dark brown hair, round blue glasses, patched denim vest, red high-top shoes, constellation notebook",
+      "voice": "Clear, earnest and occasionally sarcastic.",
+      "bio": "Nara's resourceful teenage neighbor, who notices what frightened adults overlook.",
+      "on_screen": true
+    },
+    {
+      "id": "sela",
+      "name": "Dr. Sela Venn",
+      "tags": "Missing atmospheric engineer, Nara's mother, heard only through an old microcassette",
+      "voice": "Faint analog recording; controlled, urgent and deeply familiar.",
+      "bio": "Nara's mother, missing for eight years after investigating Morrow Mesh and Greyglass Observatory.",
+      "on_screen": false
+    }
+  ],
+  "negative": "No gore, corpses, zombie features, graphic injury, weapons, fantasy magic, comedy exaggeration, cropped faces, hidden eyes, extra fingers, malformed hands, inconsistent clothing, outfit color changes, photorealism, 3D rendering, watermarks, logos or unrequested text. Show only quoted text.",
+  "look": "Cinematic 2D anime suspense drama, rain-darkened urban realism, sharp expressive faces, clean linework, detailed wet brick and metal, cool blue-gray shadows, amber practical lights, restrained copper accents, shallow atmospheric haze, realistic proportions and consistent character designs. Keep every visible face fully in frame.",
+  "music": "Five-minute dark ambient survival score: deep low drones, distant metallic textures, faint rain, almost no melody, slow heavy tension that sits quietly under narration. Small swells around 1:40 and 3:20, a cold unresolved rise in the last 25 seconds. Instrumental only, no vocals.",
+  "shots": [
+    {
+      "id": 1,
+      "part": "Triple Hook",
+      "location": "Calder Row",
+      "framing": "Low medium-wide shot beneath the elevated rail, Nara centered with her full face visible.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Rain-black street, red brick apartments, stopped commuters and dozens of white phone screens beneath steel rail shadows.",
+      "poses": [
+        "Nara froze over her bicycle as every surrounding phone glowed white.",
+        "Nara lifted her head sharply, amber eyes wide, while the white screens remained raised around her.",
+        "Nara gripped the handlebars and hunched against the piercing sound, her mustard scarf blown sideways.",
+        "Nara stared directly ahead, jaw tight, while the commuters behind her remained rigid."
+      ],
+      "narration": "At 7:17, every phone in Meridian screamed.",
+      "line": null,
+      "sfx": "Hard rain, elevated train rumble, synchronized piercing electronic tone."
+    },
+    {
+      "id": 2,
+      "part": "Lock-In Zone",
+      "location": "Calder Row",
+      "framing": "Eye-level medium-wide shot of Nara among frozen commuters, every face fully visible.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Wet crosswalk beneath the rail, stalled bicycles, white phone screens and rain streaking through gray morning light.",
+      "poses": [
+        "Nara covered one ear while everyone around her stared at their phones.",
+        "Nara lowered her hand slowly, watching the motionless faces around her.",
+        "Nara glanced left with narrowed eyes as a commuter's phone slipped downward.",
+        "Nara stood rigid beside her bicycle after the sound stopped."
+      ],
+      "narration": "It lasted three seconds.",
+      "line": null,
+      "sfx": "Tone cuts to silence, rain hiss, distant brakes, one phone striking pavement."
+    },
+    {
+      "id": 3,
+      "part": "Lock-In Zone",
+      "location": "Calder Row",
+      "framing": "Street-level medium shot with Nara crouched beside a smoking phone, her full face visible.",
+      "characters": [
+        "nara"
+      ],
+      "background": "A cracked phone smokes in a rain-filled gutter; empty wires and rooftops loom beyond the elevated rail.",
+      "poses": [
+        "Nara crouched without touching the smoking phone, brows drawn together.",
+        "Nara held one gloved palm near the device, testing its heat from a distance.",
+        "Nara looked up toward the strangely empty rooftops, mouth slightly open.",
+        "Nara rose halfway, keeping her eyes fixed on the smoke."
+      ],
+      "narration": "By lunch, the birds were gone. By dark, a dead woman would say my name.",
+      "line": null,
+      "sfx": "Rain patter, electrical crackle, gutter water and distant confused shouts."
+    },
+    {
+      "id": 4,
+      "part": "Body Block 1",
+      "location": "Calder Row Bicycle Room",
+      "framing": "Medium-wide side shot of Nara and her courier bicycle, her face fully visible.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Brick bicycle room, hanging locks, floor pump, wet concrete and a narrow window showing steady rain.",
+      "poses": [
+        "Nara crouched beside the front tire and pressed it firmly with both thumbs.",
+        "Nara watched the tire gauge with a focused, routine expression.",
+        "Nara checked the rear wheel while keeping the bicycle steady with one hand.",
+        "Nara stood beside the bicycle, satisfied, and pulled on one glove."
+      ],
+      "narration": "Nine minutes earlier, I had started another ordinary courier shift in the rain.",
+      "line": null,
+      "sfx": "Rain against glass, tire valve hiss, bicycle chain clicks, distant plumbing."
+    },
+    {
+      "id": 5,
+      "part": "Body Block 1",
+      "location": "Calder Row Bicycle Room",
+      "framing": "Front medium shot across a bench, Nara's face and the open emergency pouch fully visible.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Static workbench with a water bottle, compact flashlight, folded paper map, whistle and battery radio arranged beside a black pouch.",
+      "poses": [
+        "Nara counted the five items with one gloved finger, expression calm.",
+        "Nara folded the paper map tightly while looking down the row of supplies.",
+        "Nara tested the flashlight with it pointed safely toward the floor.",
+        "Nara zipped the loaded pouch and held it against her courier bag."
+      ],
+      "narration": "I checked water, light, map, whistle and radio, because dead batteries turned small problems into traps.",
+      "line": null,
+      "sfx": "Pouch zipper, paper folding, flashlight switch, soft radio static."
+    },
+    {
+      "id": 6,
+      "part": "Body Block 1",
+      "location": "Calder Row Lobby",
+      "framing": "Medium-wide frontal shot of Nara outside a crowded elevator, her face fully visible.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Old tiled lobby, open brass elevator doors, packed silhouettes inside and ceiling lights caught mid-flicker.",
+      "poses": [
+        "Nara stopped before the elevator threshold and studied the flickering light.",
+        "Nara leaned back as the overhead lamp dimmed, suspicion tightening her face.",
+        "Nara raised one palm toward the crowded car and shook her head.",
+        "Nara turned her shoulders toward the stairwell, expression decided."
+      ],
+      "narration": "When the elevator lights flickered, I refused the crowded car.",
+      "line": {
+        "character": "nara",
+        "text": "Not today."
+      },
+      "sfx": "Fluorescent buzz, elevator bell, cable groan, rain muffled through doors."
+    },
+    {
+      "id": 7,
+      "part": "Body Block 1",
+      "location": "Calder Row Stairwell",
+      "framing": "Low medium-wide shot up the stairs, Nara's full face visible above the handrail.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Red brick stairwell, wired-glass window, chipped green rail and numbered landings descending behind her.",
+      "poses": [
+        "Nara stepped down quickly with one hand sliding along the rail.",
+        "Nara paused on the landing and looked back toward the elevator shaft.",
+        "Nara tightened her courier strap and resumed descending.",
+        "Nara reached the lower landing with a faint, dry grimace."
+      ],
+      "narration": "I took four flights down on foot. My knees complained. They were alive to do it.",
+      "line": null,
+      "sfx": "Irregular footsteps, jacket rustle, distant elevator motor stalling with a dull clunk."
+    },
+    {
+      "id": 8,
+      "part": "Body Block 1",
+      "location": "Meridian Courier Hub",
+      "framing": "Counter-height medium shot of Nara receiving a metal parcel, her full face visible.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Narrow courier counter, parcel cubbies, route maps and a sealed steel package labeled \"ASTER VALE CIVIC ACOUSTICS\".",
+      "poses": [
+        "Nara rested both hands around the cold metal parcel and read its label.",
+        "Nara lifted one eyebrow at the destination while keeping the parcel on the counter.",
+        "Nara tilted the package slightly, listening with a doubtful expression.",
+        "Nara tucked the package beneath one arm and looked toward the exit."
+      ],
+      "narration": "Dispatch handed me a sealed metal parcel for an office that had already closed.",
+      "line": null,
+      "sfx": "Parcel sliding on laminate, printer chatter, bicycle bells outside, fluorescent hum."
+    },
+    {
+      "id": 9,
+      "part": "Rehook 1",
+      "location": "Calder Row",
+      "framing": "Tight medium shot beneath an awning, Nara's face, dead phone and metal parcel fully visible.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Rain beyond the awning, stalled commuters, elevated tracks and wet storefront glass.",
+      "poses": [
+        "Nara held her black phone beside the parcel, staring at its dead screen.",
+        "Nara pressed the parcel against her palm and felt the vibration.",
+        "Nara shifted her gaze from the dead phone to the humming metal.",
+        "Nara drew the parcel away from her body, eyes narrowed."
+      ],
+      "narration": "But the dead phone wasn't the strange part. The package was humming back.",
+      "line": null,
+      "sfx": "Heavy rain, dying electronic chirps, faint metallic vibration from the parcel."
+    },
+    {
+      "id": 10,
+      "part": "Body Block 2",
+      "location": "Meridian Courier Hub",
+      "framing": "Over-counter medium shot with Nara and a dispatch screen, her full face visible.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Dim courier terminal, stacked parcels and a route screen displaying \"DESTINATION NOT FOUND\".",
+      "poses": [
+        "Nara tapped the destination field and frowned at the error.",
+        "Nara checked the metal parcel label against the screen.",
+        "Nara leaned closer to the terminal, disbelief replacing irritation.",
+        "Nara pulled the parcel toward herself and looked toward the street."
+      ],
+      "narration": "I checked twice. The destination had vanished from dispatch like it had never existed.",
+      "line": null,
+      "sfx": "Terminal error beep, cooling fan winding down, rain and distant traffic horns."
+    },
+    {
+      "id": 11,
+      "part": "Body Block 2",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Medium two-shot across the repair bench, Nara and Jun's full faces visible.",
+      "characters": [
+        "nara",
+        "jun"
+      ],
+      "background": "Cramped electronics kiosk, pegboard tools, unplugged radios and a growing pile of removed batteries.",
+      "poses": [
+        "Nara set the parcel on the bench while Jun pointed firmly at the battery pile.",
+        "Jun held out an empty gloved hand; Nara placed her phone battery beside the others.",
+        "Nara watched as Jun checked beneath the bench for hidden power cells.",
+        "Jun folded her arms over the powerless workspace while Nara guarded the parcel."
+      ],
+      "narration": "I took the parcel to Jun's kiosk, where we killed every nearby battery.",
+      "line": {
+        "character": "jun",
+        "text": "Kill every battery first."
+      },
+      "sfx": "Battery clacks, tool drawer sliding, rain on the kiosk roof, fading transformer buzz."
+    },
+    {
+      "id": 12,
+      "part": "Body Block 2",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Medium two-shot beside the powerless bench, both faces fully visible.",
+      "characters": [
+        "nara",
+        "jun"
+      ],
+      "background": "The sealed parcel rests alone on a rubber mat among unplugged tools and dark screens.",
+      "poses": [
+        "Nara laid two fingers on the parcel while Jun watched her analog wristwatch.",
+        "Jun raised one finger at the measured interval; Nara felt the vibration.",
+        "Nara and Jun exchanged a tense look across the parcel.",
+        "Jun held the watch closer while Nara kept her gloved hand still."
+      ],
+      "narration": "Nothing powered remained. Yet I felt the parcel pulse through my gloves every seventeen seconds.",
+      "line": {
+        "character": "jun",
+        "text": "Seventeen seconds. Exactly."
+      },
+      "sfx": "Analog watch ticks, rain, faint metal buzz followed by long silence."
+    },
+    {
+      "id": 13,
+      "part": "Body Block 2",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Bench-level medium two-shot with the parcel seam foregrounded and both faces visible.",
+      "characters": [
+        "nara",
+        "jun"
+      ],
+      "background": "Powerless repair bench, static tools and the metal parcel with one warped, heat-softened seam.",
+      "poses": [
+        "Nara held her hands clear of the warped seam while Jun leaned closer.",
+        "Jun pointed at the softened metal without touching it; Nara watched carefully.",
+        "Nara steadied the parcel from its solid side, lips pressed tight.",
+        "Jun drew back as the open seam revealed a dark inner compartment."
+      ],
+      "narration": "Heat had softened one seam. I let it open rather than force a sealed container.",
+      "line": {
+        "character": "jun",
+        "text": "The seam softened from heat."
+      },
+      "sfx": "Metal creak, rubber mat squeak, rain drumming overhead."
+    },
+    {
+      "id": 14,
+      "part": "Body Block 2",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Medium two-shot over the open parcel, Nara and Jun's full faces visible.",
+      "characters": [
+        "nara",
+        "jun"
+      ],
+      "background": "Open steel parcel on the bench, dark foam lining and a brass key resting in a fitted slot.",
+      "poses": [
+        "Nara lifted the brass key by its broad end while Jun watched.",
+        "Nara turned the key between two fingers, studying its old-fashioned teeth.",
+        "Jun leaned sideways to compare the key with modern tools on the wall.",
+        "Nara held the key still, her expression shifting from curiosity to concern."
+      ],
+      "narration": "Inside, I found a brass key cut for something older than any city lock.",
+      "line": null,
+      "sfx": "Soft brass scrape, analog watch ticks, distant thunder."
+    },
+    {
+      "id": 15,
+      "part": "Body Block 2",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Medium two-shot with the open parcel and vial foregrounded, both faces fully visible.",
+      "characters": [
+        "nara",
+        "jun"
+      ],
+      "background": "The brass key lies beside a sealed glass vial containing fine copper-colored dust.",
+      "poses": [
+        "Nara held the vial upright at arm's length while Jun stared at the dust.",
+        "Nara slowly rotated her wrist, watching particles cling to the glass.",
+        "Jun pulled her headphones away from the bench, eyes narrowed.",
+        "Nara returned the sealed vial to the foam slot without loosening its cap."
+      ],
+      "narration": "I found a glass vial beside it. Copper-colored dust clung to the walls.",
+      "line": {
+        "character": "jun",
+        "text": "That's not rust."
+      },
+      "sfx": "Glass touching foam, fine particulate hiss inside the vial, rain and watch ticks."
+    },
+    {
+      "id": 16,
+      "part": "Body Block 2",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Medium two-shot with a microcassette held toward camera, both faces fully visible.",
+      "characters": [
+        "nara",
+        "jun"
+      ],
+      "background": "Open parcel, brass key, sealed vial and powerless repair tools beneath a cold work lamp.",
+      "poses": [
+        "Nara lifted the cassette showing \"GREYGLASS: HAND DELIVERY ONLY\" while Jun read over it.",
+        "Nara turned the cassette toward the light, brows tightening.",
+        "Jun pointed at the old tape mechanism without touching it.",
+        "Nara held the cassette near her chest and looked at Jun."
+      ],
+      "narration": "I lifted an old microcassette marked for hand delivery to Greyglass.",
+      "line": {
+        "character": "jun",
+        "text": "Greyglass?"
+      },
+      "sfx": "Plastic cassette click, rain softening outside, quiet analog ticking."
+    },
+    {
+      "id": 17,
+      "part": "Rehook 2",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Tight medium two-shot with the cassette between Nara and Jun, both faces fully visible.",
+      "characters": [
+        "nara",
+        "jun",
+        "sela"
+      ],
+      "background": "Dark repair screens, unplugged radios, open parcel and motionless tools.",
+      "poses": [
+        "Nara held her finger several centimeters from the untouched play switch.",
+        "Jun jerked both hands away as the cassette mechanism moved by itself.",
+        "Nara stared at the cassette, recognition and fear crossing her face.",
+        "Jun watched Nara instead of the tape, alarm replacing curiosity."
+      ],
+      "narration": "Then the tape said my name.",
+      "line": {
+        "character": "sela",
+        "text": "Nara Venn, do not deliver this."
+      },
+      "sfx": "Cassette motor engaging, warped tape hiss, faint mechanical flutter."
+    },
+    {
+      "id": 18,
+      "part": "Body Block 3",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Tight medium two-shot focused on Nara's reaction, both faces fully visible.",
+      "characters": [
+        "nara",
+        "jun",
+        "sela"
+      ],
+      "background": "The cassette rests on the bench beside the open parcel, key and sealed vial.",
+      "poses": [
+        "Nara went completely still, eyes fixed on the playing cassette.",
+        "Nara covered her mouth with one hand as Jun watched quietly.",
+        "Nara leaned toward the tape, grief breaking through her guarded expression.",
+        "Nara lowered her hand and stared at the speaker with wet eyes."
+      ],
+      "narration": "I knew my mother's voice. Eight years missing, and she sounded close enough to touch.",
+      "line": {
+        "character": "nara",
+        "text": "Mom?"
+      },
+      "sfx": "Tape hiss, uneven cassette motor, rain tapping the metal shutter."
+    },
+    {
+      "id": 19,
+      "part": "Body Block 3",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Medium two-shot across the cassette and key, Nara and Jun's full faces visible.",
+      "characters": [
+        "nara",
+        "jun",
+        "sela"
+      ],
+      "background": "Open parcel on the static bench, brass key separated from the sealed copper-dust vial.",
+      "poses": [
+        "Nara closed her hand around the brass key while listening.",
+        "Nara moved the key farther from an unplugged speaker on the shelf.",
+        "Jun glanced between the speaker and the key, absorbing the warning.",
+        "Nara wrapped the key in a dry cloth and held it tightly."
+      ],
+      "narration": "I heard why she chose tape: digital messages could be rewritten.",
+      "line": {
+        "character": "sela",
+        "text": "Keep the key dry, away from powered speakers."
+      },
+      "sfx": "Cassette hiss, cloth rustle, low thunder, irregular drips outside."
+    },
+    {
+      "id": 20,
+      "part": "Body Block 3",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Medium two-shot with the sealed vial between Nara and Jun, both faces fully visible.",
+      "characters": [
+        "nara",
+        "jun"
+      ],
+      "background": "Powerless scanner, clear containment bags, rigid plastic case and open parcel on the repair bench.",
+      "poses": [
+        "Jun gestured toward the scanner while Nara held one palm up.",
+        "Jun reached for a cable, then stopped at Nara's warning expression.",
+        "Nara slid a clear bag beneath the sealed vial without touching the cap.",
+        "Jun folded her hands back while Nara prepared the second bag."
+      ],
+      "narration": "Jun wanted a scan. I refused to open dust we could not identify.",
+      "line": {
+        "character": "jun",
+        "text": "I can scan it without opening it."
+      },
+      "sfx": "Plastic bag crackle, case latch clicking, powerless scanner button tapping."
+    },
+    {
+      "id": 21,
+      "part": "Body Block 3",
+      "location": "Jun's Repair Kiosk",
+      "framing": "Medium two-shot across the containment case and playing cassette, both faces fully visible.",
+      "characters": [
+        "nara",
+        "jun",
+        "sela"
+      ],
+      "background": "Double-bagged vial inside a rigid clear case, wrapped key and cassette arranged on the static bench.",
+      "poses": [
+        "Nara pressed the rigid case latch closed while Jun watched the cassette.",
+        "Nara checked both sealed bags through the case wall.",
+        "Jun flinched as the tape snagged; Nara turned sharply toward it.",
+        "Nara held the case against her chest while the cassette reels stood still."
+      ],
+      "narration": "I double-bagged the vial, locked it in a rigid case, and the tape jammed on first siren.",
+      "line": {
+        "character": "sela",
+        "text": "The first siren\u2014"
+      },
+      "sfx": "Two case latches, cassette warble, tape mechanism jamming with a hard click."
+    },
+    {
+      "id": 22,
+      "part": "Body Block 3",
+      "location": "Calder Row",
+      "framing": "Wide street shot with Nara and her bicycle fully visible, her face clear.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Red brick apartments, blue laundromat sign, rooftop water tanks and hundreds of birds lifting west into a bruised evening sky.",
+      "poses": [
+        "Nara stopped beside her bicycle and looked up at the rising birds.",
+        "Nara shielded her eyes from the rain while tracking the flock west.",
+        "Nara gripped the courier bag containing the parcel, face tense.",
+        "Nara stood beneath the emptying rooftops as feathers crossed the sky."
+      ],
+      "narration": "By the time I rode home, every rooftop bird had lifted and flown west.",
+      "line": null,
+      "sfx": "Chaotic wingbeats, bicycle wheel slowing, wind between buildings, light rain."
+    },
+    {
+      "id": 23,
+      "part": "Body Block 3",
+      "location": "Calder Row",
+      "framing": "Medium two-shot of Nara and Lio in the street, both faces fully visible.",
+      "characters": [
+        "nara",
+        "lio"
+      ],
+      "background": "Apartment facades, elevated rail shadows and multiple emergency speakers turned toward one pale section of sky.",
+      "poses": [
+        "Lio pointed upward with his constellation notebook while Nara followed his finger.",
+        "Lio adjusted his blue glasses and studied the aligned speakers.",
+        "Nara looked from one speaker to the next, her expression hardening.",
+        "Lio lowered his notebook and looked directly at Nara for an answer."
+      ],
+      "narration": "Lio met me at Calder Row. Beneath him, every emergency speaker faced one patch of sky.",
+      "line": {
+        "character": "lio",
+        "text": "Why are all the speakers facing the same sky?"
+      },
+      "sfx": "Wind, loose speaker brackets creaking, distant rail vibration, scattered wingbeats."
+    },
+    {
+      "id": 24,
+      "part": "Cliffhanger and CTA",
+      "location": "Nara's Apartment",
+      "framing": "Medium shot of Nara beside the window and cassette, her full face visible.",
+      "characters": [
+        "nara",
+        "sela"
+      ],
+      "background": "Dim fourth-floor room, rain-streaked window, paper map, wrapped brass key and rigid vial case on the table.",
+      "poses": [
+        "Nara leaned over the cassette as its reels began moving again.",
+        "Nara slowly straightened, eyes widening at the renewed message.",
+        "Nara gripped the table edge and looked toward the dark window.",
+        "Nara stood rigid beside the tape, fear settling into resolve."
+      ],
+      "narration": "",
+      "line": {
+        "character": "sela",
+        "text": "The first siren is a test. The second starts it."
+      },
+      "sfx": "Cassette motor restarting, tape hiss, rain on glass, distant speaker relay clicking."
+    },
+    {
+      "id": 25,
+      "part": "Cliffhanger and CTA",
+      "location": "Nara's Apartment",
+      "framing": "Medium-wide profile shot across the alley, Nara's full face visible beside the window.",
+      "characters": [
+        "nara"
+      ],
+      "background": "Dark Calder Row apartments; across the alley, an empty room contains a single phone glowing white beneath a wall speaker.",
+      "poses": [
+        "Nara stared across the alley as the white phone illuminated the empty room.",
+        "Nara pressed one hand against the window when the city siren began.",
+        "Nara turned slightly toward the cassette, fear visible in her amber eyes.",
+        "Nara faced the glowing phone again, mustard scarf still around her neck."
+      ],
+      "narration": "Tomorrow, we find out what the second siren starts. Subscribe and watch Episode 2.",
+      "line": null,
+      "sfx": "One city siren rising over hard rain, window glass trembling, distant dogs barking."
+    }
+  ],
+  "episode": 1
+}

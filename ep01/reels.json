@@ -1,0 +1,540 @@
+{
+  "reels": [
+    {
+      "id": 1,
+      "angle": "Cliffhanger reel",
+      "hook_text": "THE SECOND SIREN STARTS IT",
+      "cta_text": "FULL EPISODE: HEAR WHO WARNED NARA",
+      "sections": [
+        {
+          "part": "hook",
+          "vo": "The second siren starts it.",
+          "shots": [
+            {
+              "shot": 25,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "lock_in",
+          "vo": "The first was only a test. And a woman missing eight years had just warned Nara by name.",
+          "shots": [
+            {
+              "shot": 24,
+              "seconds": 3,
+              "use_line": false
+            },
+            {
+              "shot": 18,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body1",
+          "vo": "Nine minutes earlier, Nara accepted a metal parcel for an office that had vanished from the dispatch system.",
+          "shots": [
+            {
+              "shot": 8,
+              "seconds": 4,
+              "use_line": false
+            },
+            {
+              "shot": 10,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook1",
+          "vo": "So why was the parcel humming?",
+          "shots": [
+            {
+              "shot": 9,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body2",
+          "vo": "They removed every battery. It still pulsed every seventeen seconds, hiding a brass key, copper dust, and an old tape.",
+          "shots": [
+            {
+              "shot": 12,
+              "seconds": 4,
+              "use_line": false
+            },
+            {
+              "shot": 16,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook2",
+          "vo": "So who made the untouched tape play?",
+          "shots": [
+            {
+              "shot": 17,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body3",
+          "vo": "",
+          "shots": [
+            {
+              "shot": 17,
+              "seconds": 3,
+              "use_line": true
+            }
+          ]
+        },
+        {
+          "part": "closing",
+          "vo": "Nara knew the voice. Who had waited eight years to warn her?",
+          "shots": [
+            {
+              "shot": 18,
+              "seconds": 5,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "cta",
+          "vo": "Watch the full five-minute episode on our channel to hear who warned her.",
+          "shots": [
+            {
+              "shot": 16,
+              "seconds": 5,
+              "use_line": false
+            }
+          ]
+        }
+      ],
+      "caption": "An untouched tape knew Nara's name. Watch the full five-minute episode on our channel.",
+      "hashtags": [
+        "#AnimeSuspense",
+        "#Cliffhanger",
+        "#MysteryAnime",
+        "#ShortAnime"
+      ]
+    },
+    {
+      "id": 2,
+      "angle": "Survival reel",
+      "hook_text": "THE ELEVATOR WAS THE TRAP",
+      "cta_text": "WATCH THE FULL FIVE-MINUTE EPISODE ON OUR CHANNEL",
+      "sections": [
+        {
+          "part": "hook",
+          "vo": "Taking that flickering elevator would have trapped her.",
+          "shots": [
+            {
+              "shot": 6,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "lock_in",
+          "vo": "One warning sign saved her. Then the backup plan kept a small failure from becoming a locked box.",
+          "shots": [
+            {
+              "shot": 6,
+              "seconds": 3,
+              "use_line": false
+            },
+            {
+              "shot": 5,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body1",
+          "vo": "First: water, flashlight, paper map, whistle, battery radio. Keep them together, checked, and ready to grab.",
+          "shots": [
+            {
+              "shot": 5,
+              "seconds": 6,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook1",
+          "vo": "But gear cannot help inside a stalled elevator.",
+          "shots": [
+            {
+              "shot": 6,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body2",
+          "vo": "If the stairs are clear and you can use them, skip the flickering elevator. Hold the rail and move steadily.",
+          "shots": [
+            {
+              "shot": 6,
+              "seconds": 3,
+              "use_line": false
+            },
+            {
+              "shot": 7,
+              "seconds": 5,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook2",
+          "vo": "Then the package kept pulsing with every battery removed.",
+          "shots": [
+            {
+              "shot": 12,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body3",
+          "vo": "They did not force the heated seam or open unknown dust. They double-bagged the vial and locked it in a rigid case.",
+          "shots": [
+            {
+              "shot": 13,
+              "seconds": 4,
+              "use_line": false
+            },
+            {
+              "shot": 21,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "closing",
+          "vo": "The elevator stalled. Nara did not. The sample stayed sealed.",
+          "shots": [
+            {
+              "shot": 7,
+              "seconds": 2,
+              "use_line": false
+            },
+            {
+              "shot": 21,
+              "seconds": 2,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "cta",
+          "vo": "Watch the full five-minute episode on our channel.",
+          "shots": [
+            {
+              "shot": 24,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        }
+      ],
+      "caption": "The safest move happened before the lights failed. Watch the full five-minute episode on our channel.",
+      "hashtags": [
+        "#SurvivalTips",
+        "#EmergencyPrep",
+        "#AnimeReel",
+        "#StayReady"
+      ]
+    },
+    {
+      "id": 3,
+      "angle": "Moral-choice reel",
+      "hook_text": "DELIVER IT\u2014OR TRUST HER MOTHER?",
+      "cta_text": "WATCH THE FULL FIVE-MINUTE EPISODE ON OUR CHANNEL",
+      "sections": [
+        {
+          "part": "hook",
+          "vo": "Deliver the parcel\u2014or trust her missing mother?",
+          "shots": [
+            {
+              "shot": 17,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "lock_in",
+          "vo": "Deliver it: risk disaster. Refuse it: risk her job on a voice she cannot prove. Then a secret changes everything.",
+          "shots": [
+            {
+              "shot": 8,
+              "seconds": 4,
+              "use_line": false
+            },
+            {
+              "shot": 18,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body1",
+          "vo": "The office was closed. Then it vanished from dispatch, while its package kept pulsing without power.",
+          "shots": [
+            {
+              "shot": 10,
+              "seconds": 3,
+              "use_line": false
+            },
+            {
+              "shot": 12,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook1",
+          "vo": "Then the tape gave one direct order.",
+          "shots": [
+            {
+              "shot": 17,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body2",
+          "vo": "",
+          "shots": [
+            {
+              "shot": 17,
+              "seconds": 3,
+              "use_line": true
+            },
+            {
+              "shot": 18,
+              "seconds": 2,
+              "use_line": true
+            }
+          ]
+        },
+        {
+          "part": "rehook2",
+          "vo": "But Mom chose tape because digital messages could be rewritten.",
+          "shots": [
+            {
+              "shot": 19,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body3",
+          "vo": "That made the warning harder to alter. Nara stopped the delivery, wrapped the key, and sealed the unknown dust.",
+          "shots": [
+            {
+              "shot": 19,
+              "seconds": 3,
+              "use_line": false
+            },
+            {
+              "shot": 21,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "closing",
+          "vo": "",
+          "shots": [
+            {
+              "shot": 24,
+              "seconds": 4,
+              "use_line": true
+            }
+          ]
+        },
+        {
+          "part": "cta",
+          "vo": "Watch the full five-minute episode on our channel.",
+          "shots": [
+            {
+              "shot": 25,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        }
+      ],
+      "caption": "Would you finish the delivery or trust the impossible voice? Watch the full five-minute episode on our channel.",
+      "hashtags": [
+        "#ImpossibleChoice",
+        "#AnimeDrama",
+        "#MoralDilemma",
+        "#SuspenseStory"
+      ]
+    },
+    {
+      "id": 4,
+      "angle": "Mystery-clue reel",
+      "hook_text": "ALL SPEAKERS FACED ONE SKY",
+      "cta_text": "WATCH THE FULL FIVE-MINUTE EPISODE ON OUR CHANNEL",
+      "sections": [
+        {
+          "part": "hook",
+          "vo": "",
+          "shots": [
+            {
+              "shot": 23,
+              "seconds": 4,
+              "use_line": true
+            }
+          ]
+        },
+        {
+          "part": "lock_in",
+          "vo": "One speaker could be broken. Every speaker is a pattern. And the birds had already fled west.",
+          "shots": [
+            {
+              "shot": 23,
+              "seconds": 3,
+              "use_line": false
+            },
+            {
+              "shot": 22,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body1",
+          "vo": "It echoed the episode's opening: every phone in Meridian screamed together for three seconds, then the screens died.",
+          "shots": [
+            {
+              "shot": 1,
+              "seconds": 4,
+              "use_line": false
+            },
+            {
+              "shot": 2,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook1",
+          "vo": "So what were they all hearing?",
+          "shots": [
+            {
+              "shot": 3,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body2",
+          "vo": "The metal parcel answered every seventeen seconds, even after Jun removed every battery near it.",
+          "shots": [
+            {
+              "shot": 9,
+              "seconds": 3,
+              "use_line": false
+            },
+            {
+              "shot": 12,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook2",
+          "vo": "Then the sky clue changed meaning.",
+          "shots": [
+            {
+              "shot": 23,
+              "seconds": 3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body3",
+          "vo": "The birds moved west. The speakers aimed up. Across the alley, one dead phone glowed beneath another speaker.",
+          "shots": [
+            {
+              "shot": 22,
+              "seconds": 3,
+              "use_line": false
+            },
+            {
+              "shot": 25,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "closing",
+          "vo": "Maybe the speakers were not broadcasting. Maybe they were listening. Was the first siren a message\u2014or a reply?",
+          "shots": [
+            {
+              "shot": 23,
+              "seconds": 3,
+              "use_line": false
+            },
+            {
+              "shot": 25,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "cta",
+          "vo": "Watch the full five-minute episode on our channel.",
+          "shots": [
+            {
+              "shot": 24,
+              "seconds": 4,
+              "use_line": false
+            }
+          ]
+        }
+      ],
+      "caption": "The speakers may not be broadcasting. What if they are listening? Watch the full five-minute episode on our channel.",
+      "hashtags": [
+        "#AnimeMystery",
+        "#HiddenClues",
+        "#MysteryTheory",
+        "#AnimeReels"
+      ]
+    }
+  ]
+}

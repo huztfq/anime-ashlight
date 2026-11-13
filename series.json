@@ -1,0 +1,567 @@
+{
+  "title": "AFTER THE HUM",
+  "tagline": "When the world went quiet, the mountains kept broadcasting.",
+  "logline": "After a three-second tone begins turning ordinary people into signal-driven hunters, a bike courier carrying a warning from her missing mother leads a fractured band out of a collapsing city toward a mountain observatory that may be both humanity's best refuge and the source of the disaster.",
+  "world": {
+    "normal_life": "Meridian is a dense, rain-darkened city where bike courier Nara Venn delivers packages while caring for her teenage neighbor, Lio. Life initially feels ordinary: crowded trains, water-main repairs, emergency drills and arguments over rent. Small failures accumulate across the first week. Birds abandon entire blocks, compasses drift, phones heat up without power, tap water hums inside pipes and public speakers run unexplained three-second tests.",
+    "the_collapse": "The Quietfall begins when Meridian's emergency network broadcasts a synchronized low-frequency carrier during a geomagnetic storm. Power substations trip, vehicles lose control, pumps stop and thousands of exposed people become neurologically phase-locked. Fires, water loss and human panic cause more destruction than the initial blackout. Autonomous repeaters continue broadcasting after the grid falls.",
+    "the_threat": "The Held are living people whose nervous systems have been phase-locked by conductive Morrow Mesh particles and a repeating signal. Between pulses they may stand motionless, hum one note or repeat familiar routines. When they detect rhythmic vibration, powered transmitters or repeated light, they converge with frightening coordination. They are shown through silhouettes, reflections, footsteps, copper-glinting eyes, sounds and aftermath rather than graphic violence.",
+    "threat_rules": [
+      "The Held are not undead, and bites do not spread the condition. The primary danger is airborne Morrow dust combined with a synchronized carrier signal.",
+      "Repeated patterns attract them: alarms, generators, footsteps at a steady pace, blinking lamps and looping radio calls. Brief irregular sounds are less likely to hold their attention.",
+      "Waterfalls, hard rain, wind and other chaotic natural noise can mask movement. A repeating artificial sound inside that noise can still draw them.",
+      "Bright daylight causes severe sensory pain and slows most Held, but cloud cover, tunnels, dusk and night make them more active.",
+      "They retain procedural memory. A former resident may open a familiar latch, use a stairwell or return to a workplace, so ordinary locked doors are not reliable.",
+      "They remain living humans who require water, rest and warmth. The survivors must treat restraint or lethal force as a moral decision, not pest control.",
+      "Someone caught in the first twenty-four hours may be dephased through total signal isolation and professional supportive care. Later neurological damage may be permanent.",
+      "Dust exposure is reduced with a well-fitted particulate respirator, sealed indoor air and wet cleanup. Boiling contaminated water kills microbes but does not remove conductive particles; proper filtration or a protected spring is required."
+    ],
+    "the_mystery": "Nara's first impossible package contains an analog key and a tape recorded by her missing mother, atmospheric engineer Dr. Sela Venn. Its fragmented warnings point toward Line Nine, the Morrow Mesh project and Greyglass Observatory. Clues gradually reveal that official evacuation signals, water-pressure pulses and the movements of the Held all follow the same seventeen-second timing structure.",
+    "mystery_payoff": "The Greyglass archive proves Quietfall was preventable. Aster Vale dispersed electroactive Morrow Mesh as a wildfire-monitoring and moisture-control system. During the geomagnetic storm, emergency director Halden Vey overrode safety warnings and synchronized the city's carrier to stabilize infrastructure. The pulse coupled the particles to human vestibular nerves, while autonomous repeaters kept the disaster alive. Sela hid an inverse-pattern shutdown key in Nara's package. In the finale, the community must choose between using the signal to control the Held or burning out Greyglass's coils to broadcast a one-time dephasing pattern and release every surviving archive. They choose the latter, helping early-stage victims but sacrificing long-range power and their safest winter advantage.",
+    "journey": "The story moves from apartments, repair shops and waterworks through Meridian's rooftops and service tunnels, then across a drained reservoir, abandoned quarry and storm-beaten foothills. The group learns forest navigation, river safety, food storage and cold-weather travel before climbing to Greyglass. Each location removes an urban dependency and forces the survivors to replace it with practical knowledge.",
+    "sanctuary": "Greyglass is a decommissioned mountain weather observatory built around a stone fire lookout, two telescope domes, a gravity-fed spring cistern, damaged micro-hydro turbine, greenhouse terraces and buried archive rooms. It can support a small community only if they repair drainage, ration firewood, protect the watershed, preserve food and create fair rules. Its radio mast offers warning and communication, but it also hides the final active Morrow repeater."
+  },
+  "cast": [
+    {
+      "id": "C01",
+      "name": "Nara Venn",
+      "age": 24,
+      "role": "Bike courier, lead survivor and primary narrator",
+      "look_tags": "Short black bob, fixed white streak at left temple, amber eyes, mustard scarf, charcoal courier jacket, silver triangle ear cuff, black cargo trousers; at episode 61 she adds a brown forest shell, and at episode 121 a dark winter parka, always retaining the mustard scarf.",
+      "personality": "Fast-thinking, observant and compassionate, but accustomed to leaving before other people can depend on her.",
+      "arc": "Nara begins as a solitary courier who believes delivering the package is someone else's responsibility. She becomes a reluctant leader, learns that transparency matters more than control and ultimately rejects the chance to command the Held. Her narration changes from detached observation to openly using the word 'we.'",
+      "voice": "Low, intimate and direct; short reflective sentences with dry humor and restrained emotion.",
+      "joins_episode": 1
+    },
+    {
+      "id": "C02",
+      "name": "Jun Arai",
+      "age": 17,
+      "role": "Electronics apprentice, radio operator and signal analyst",
+      "look_tags": "Dense auburn curls, teal over-ear headphones around neck, yellow rain shell, narrow black gloves, analog wristwatch; winter upgrade at episode 121 keeps the teal headphones and yellow shoulder panels.",
+      "personality": "Curious, blunt and inventive, using technical certainty to hide fear of being dismissed as a child.",
+      "arc": "Jun initially treats the signal as a puzzle she can solve alone. Mistakes caused by an unauthorized broadcast teach her operational discipline. She eventually designs the irregular communications protocol and helps transmit Sela's inverse pattern.",
+      "voice": "Quick, precise and slightly breathless; technical ideas translated into simple comparisons.",
+      "joins_episode": 2
+    },
+    {
+      "id": "C03",
+      "name": "Soren Malik",
+      "age": 31,
+      "role": "Municipal water operator and survival systems specialist",
+      "look_tags": "Long dark braid, orange knit cap, gray waterworks coverall, heavy rubber boots, steel sampling flask; switches to tan trail layers at episode 61 and insulated overalls at episode 121, always retaining the orange cap.",
+      "personality": "Patient, methodical and deeply ethical, but slow to act without enough evidence.",
+      "arc": "Soren loses faith in institutions after discovering that the water department concealed Morrow contamination. At Greyglass he builds systems the whole community can inspect, turning hidden expertise into shared knowledge.",
+      "voice": "Calm baritone with careful pauses; explains survival processes without sounding like a lecture.",
+      "joins_episode": 3
+    },
+    {
+      "id": "C04",
+      "name": "Elias Rook",
+      "age": 39,
+      "role": "Paramedic, medic and moral counterweight",
+      "look_tags": "Dark skin, shaved head, rectangular glasses, navy paramedic shell, fixed red trauma sling across chest, white medical tape around two fingers; winter coat begins episode 121 but the red sling stays visible.",
+      "personality": "Protective, disciplined and compassionate, with a dangerous tendency to accept blame for every life he cannot save.",
+      "arc": "Elias first insists that every Held person can be rescued. Repeated triage choices harden him until Lio forces him to recognize the difference between realism and surrender. He later establishes Greyglass's medical ethics and isolation ward.",
+      "voice": "Warm, grounded and economical; becomes very quiet during emergencies.",
+      "joins_episode": 4
+    },
+    {
+      "id": "C05",
+      "name": "Tamsin Korr",
+      "age": 29,
+      "role": "Structural inspector, climber and security planner",
+      "look_tags": "Platinum side braid, scar through right eyebrow, forest-green utility coat, brass carabiner belt, square-toed work boots; gains a gray climbing harness at episode 61 and white mountain shell at episode 121 while keeping the green collar visible.",
+      "personality": "Practical, suspicious and fearless around buildings, but terrified of trusting people she cannot evaluate.",
+      "arc": "Tamsin joins after recognizing her father among the Held. She treats every stranger as a structural weakness until her rigid defenses nearly fracture Greyglass. She becomes the architect of a sanctuary designed around consent instead of confinement.",
+      "voice": "Dry, clipped and unsentimental, with rare lines of sharp affection.",
+      "joins_episode": 10
+    },
+    {
+      "id": "C06",
+      "name": "Lio Calder",
+      "age": 14,
+      "role": "Nara's neighbor, forager-in-training and emotional truth-teller",
+      "look_tags": "Messy brown hair, round blue glasses, patched denim vest, red high-top shoes, constellation notebook; receives practical trail boots at episode 61 but keeps one red shoelace tied around his wrist.",
+      "personality": "Resourceful, stubborn and empathetic, noticing when adults disguise fear as logic.",
+      "arc": "Lio begins as someone Nara believes she must carry. He becomes a capable mapmaker and seed keeper, then challenges the community when survival rules erase mercy. His notebooks become Greyglass's public record.",
+      "voice": "Clear, earnest and occasionally sarcastic; asks the question everyone else avoids.",
+      "joins_episode": 6
+    },
+    {
+      "id": "C07",
+      "name": "Kade Rusk",
+      "age": 43,
+      "role": "Former wildfire lookout and mountain guide",
+      "look_tags": "Salt-and-pepper beard, long black hair tied low, tan fire-lookout poncho, green lensatic compass, weathered leather gloves; adds a fur-lined hood at episode 121 without changing the poncho silhouette.",
+      "personality": "Self-contained, perceptive and protective of wilderness boundaries, with little patience for city assumptions.",
+      "arc": "Kade initially helps the group only to move them through his territory. He reveals that he abandoned an evacuation convoy after its signal drew the Held. At Greyglass he finally chooses permanent responsibility over solitary penance.",
+      "voice": "Sparse and gravelly; uses weather and terrain metaphors rather than speeches.",
+      "joins_episode": 48
+    },
+    {
+      "id": "C08",
+      "name": "Ansel Vey",
+      "age": 35,
+      "role": "Leader of the Measure faction and ideological rival",
+      "look_tags": "Blond buzz cut, pale gray eyes, black alpine coat, white scarf printed with ruler marks, silver metronome in breast pocket; appearance remains fixed through the finale.",
+      "personality": "Charismatic, orderly and genuinely committed to saving lives, but convinced that frightened people must be controlled.",
+      "arc": "Ansel arrives with disciplined survivors and knowledge inherited from his father, Halden Vey. He conceals the full cause of Quietfall and tries to turn Greyglass into a signal-controlled fortress. His final choice determines whether he repeats his father's crime or helps expose it.",
+      "voice": "Measured, reassuring and almost never raised; every sentence sounds prepared.",
+      "joins_episode": 99
+    }
+  ],
+  "locations": [
+    {
+      "name": "Calder Row",
+      "look_tags": "Narrow rain-black street, red brick apartments, elevated rail shadows, blue laundromat sign, rooftop water tanks, Nara's fourth-floor window",
+      "episodes": "1-22, with memory returns in 74 and 158"
+    },
+    {
+      "name": "Bellwether Waterworks",
+      "look_tags": "Green ceramic tunnels, huge analog pressure dials, rust-red valve wheels, tiled sampling laboratory, humming buried pipes",
+      "episodes": "3, 12, 19-31"
+    },
+    {
+      "name": "Line Nine Service Network",
+      "look_tags": "Abandoned cream subway tiles, black maintenance doors, ankle-deep reflective water, yellow route stripe, emergency lamps",
+      "episodes": "4-5, 14-18, 37-46"
+    },
+    {
+      "name": "North Span",
+      "look_tags": "Steel suspension bridge, stalled vehicles, torn silver wind screens, city skyline behind smoke, river far below",
+      "episodes": "7-9, 32-36, 44-47"
+    },
+    {
+      "name": "Ravel Quarry",
+      "look_tags": "White stone terraces, rusted conveyor, rain-filled extraction pit, orange maintenance cabins, exposed foothill road",
+      "episodes": "48-60"
+    },
+    {
+      "name": "Morrowpine Forest",
+      "look_tags": "Black pine trunks, moss-covered boulders, glacier stream, abandoned ranger markers, mist layered between trees",
+      "episodes": "57-91"
+    },
+    {
+      "name": "The Windstairs",
+      "look_tags": "Switchback trail, leaning cable pylons, slate cliffs, avalanche chutes, a ruined stone relay hut",
+      "episodes": "88-105"
+    },
+    {
+      "name": "Greyglass Observatory",
+      "look_tags": "Two cracked silver domes, dark stone lookout tower, blue greenhouse panels, gravity cistern, micro-hydro channel, red radio mast",
+      "episodes": "96-180"
+    }
+  ],
+  "months": [
+    {
+      "month": 1,
+      "name": "THE QUIETFALL",
+      "episodes": "1-30",
+      "summary": "Ordinary Meridian develops impossible faults before the synchronized carrier collapses power, water and public trust. Nara's scattered acquaintances become a survival group inside Bellwether Waterworks while the Held begin following the city's repeating systems.",
+      "turning_points": [
+        "Episode 1: Nara receives Sela's tape and hears the first siren.",
+        "Episode 8: The second carrier triggers Quietfall.",
+        "Episode 11: The group learns the Held track patterns rather than blood or scent.",
+        "Episode 19: Soren proves boiling alone cannot remove Morrow particles.",
+        "Episode 26: Bellwether's reserve is poisoned by a deliberate valve change.",
+        "Episode 30: The group discovers the official evacuation route is feeding survivors toward an active repeater."
+      ]
+    },
+    {
+      "month": 2,
+      "name": "NO SAFE STREET",
+      "episodes": "31-60",
+      "summary": "The survivors cross hostile districts, bargain with a water-hoarding faction and escape Meridian through Line Nine and North Span. In the foothills they lose urban shelter, meet Kade and learn that rescue transmitters can be more dangerous than silence.",
+      "turning_points": [
+        "Episode 34: Nara trades the group's only battery for children held at a ration checkpoint.",
+        "Episode 40: Jun's unauthorized transmission draws the Held into Line Nine.",
+        "Episode 47: North Span is cut behind the group.",
+        "Episode 48: Kade observes them from the quarry and tests their sound discipline.",
+        "Episode 54: A quarry blast reveals a hidden Aster Vale supply tunnel.",
+        "Episode 60: Meridian's final visible tower begins transmitting toward the mountains."
+      ]
+    },
+    {
+      "month": 3,
+      "name": "UNDER THE PINES",
+      "episodes": "61-90",
+      "summary": "Morrowpine strips the group of batteries, roads and reliable maps. They learn navigation, fire discipline, river crossings, edible-plant caution, food protection and storm shelter while distrust grows around Kade's knowledge of Greyglass.",
+      "turning_points": [
+        "Episode 61: The cast changes into fixed forest travel clothing.",
+        "Episode 67: Contaminated boots spread Morrow dust into the sleeping shelter.",
+        "Episode 72: Elias must choose between carrying medicine or an injured stranger.",
+        "Episode 78: Lio maps the signal using tree-ring compasses and timing notes.",
+        "Episode 84: Kade admits he once led evacuees toward Greyglass.",
+        "Episode 90: The group sees the observatory's red mast blink in a powerless mountain range."
+      ]
+    },
+    {
+      "month": 4,
+      "name": "GREYGLASS",
+      "episodes": "91-120",
+      "summary": "The ascent becomes a race against the first snow. Greyglass appears abandoned but contains a working spring, damaged turbine and hidden occupied rooms. The group repairs the sanctuary as Ansel Vey and the Measure arrive with supplies, discipline and secrets.",
+      "turning_points": [
+        "Episode 96: Nara opens Greyglass with Sela's analog key.",
+        "Episode 99: Ansel Vey arrives and identifies the Morrow timing code.",
+        "Episode 104: The spring tests clean, but the cistern has a structural crack.",
+        "Episode 109: Jun detects a repeater beneath the observatory.",
+        "Episode 114: The first community vote rejects Ansel's command structure.",
+        "Episode 120: A pulse from Greyglass causes distant Held to face the mountain at once."
+      ]
+    },
+    {
+      "month": 5,
+      "name": "THE PRICE OF SHELTER",
+      "episodes": "121-150",
+      "summary": "Winter clothing replaces travel gear as Greyglass accepts carefully screened newcomers. Food, medicine, firewood and governance become daily conflicts. The Measure demonstrates that rhythmic beacons can redirect the Held, tempting frightened residents to accept control.",
+      "turning_points": [
+        "Episode 121: Winter costumes lock in and the first severe cold front arrives.",
+        "Episode 126: Greyglass opens an isolation cabin for new arrivals.",
+        "Episode 132: A spoiled food cache exposes falsified inventory records.",
+        "Episode 138: Ansel saves the sanctuary by herding the Held with a metronome beacon.",
+        "Episode 144: Tamsin discovers confinement rooms in Greyglass's original design.",
+        "Episode 150: A community member opens the buried archive for the Measure."
+      ]
+    },
+    {
+      "month": 6,
+      "name": "THE LAST PATTERN",
+      "episodes": "151-180",
+      "summary": "The archive reveals the full history of Morrow Mesh while a winter storm and a controlled migration of the Held isolate Greyglass. Nara's group must defend the watershed, expose the truth and decide whether safety built on control deserves to survive.",
+      "turning_points": [
+        "Episode 154: Sela's complete recording names Halden Vey and the override.",
+        "Episode 160: The group learns the inverse pulse may free early-stage Held but destroy Greyglass's coils.",
+        "Episode 165: Ansel takes the analog key and activates the control carrier.",
+        "Episode 171: Lio broadcasts the archive to every listening settlement.",
+        "Episode 176: The sanctuary loses power during the coldest night.",
+        "Episode 179: Ansel breaks his father's pattern and returns the key.",
+        "Episode 180: Greyglass transmits the inverse signal, survives without the mast and sees an unknown valley answer with three irregular lights."
+      ]
+    }
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "episodes": "1-7",
+      "arc": "Hairline Cracks: normal routines continue while phone tones, missing birds, contaminated water, strange patients and an encoded countdown connect Nara, Jun, Soren, Elias and Lio."
+    },
+    {
+      "week": 2,
+      "episodes": "8-14",
+      "arc": "The Black Minute: Quietfall strikes. The group escapes fire and failing elevators, secures water and medicine, identifies the Held's attraction to patterns and rejects a false evacuation signal."
+    },
+    {
+      "week": 3,
+      "episodes": "15-21",
+      "arc": "Below the City: the survivors shelter in Line Nine, establish sanitation and watch rotations, treat dust exposure and reach Bellwether through flooded service passages."
+    },
+    {
+      "week": 4,
+      "episodes": "22-28",
+      "arc": "The Last Reservoir: Bellwether becomes a temporary home until sabotage, filtration limits and an approaching group force the survivors to choose what water they can defend."
+    },
+    {
+      "week": 5,
+      "episodes": "29-35",
+      "arc": "The Ledger: a ration faction prices every cup and battery. Nara must bargain without turning vulnerable survivors into debts."
+    },
+    {
+      "week": 6,
+      "episodes": "36-42",
+      "arc": "Pattern Breakers: Jun develops irregular signals for communication, but one unauthorized broadcast draws the Held into the group's escape tunnel."
+    },
+    {
+      "week": 7,
+      "episodes": "43-49",
+      "arc": "Leaving Meridian: the group crosses North Span, seals the city route behind them and enters Ravel Quarry under the observation of Kade Rusk."
+    },
+    {
+      "week": 8,
+      "episodes": "50-56",
+      "arc": "The Quarry Test: exposed terrain, bad water and unstable stone force practical foothill survival while a buried Aster Vale tunnel points toward Greyglass."
+    },
+    {
+      "week": 9,
+      "episodes": "57-63",
+      "arc": "Tree Line: the group enters Morrowpine, changes into trail clothing and learns to navigate without GPS while Meridian's signal follows them."
+    },
+    {
+      "week": 10,
+      "episodes": "64-70",
+      "arc": "No Straight Footsteps: sound discipline, river crossings and dust decontamination are tested when the Held enter the forest during heavy rain."
+    },
+    {
+      "week": 11,
+      "episodes": "71-77",
+      "arc": "Cold Rain: an injury and hypothermia risk divide the group over pace, shelter placement and how much medicine can be spent on strangers."
+    },
+    {
+      "week": 12,
+      "episodes": "78-84",
+      "arc": "The Map in the Noise: Lio and Jun chart the signal's timing while Kade's concealed connection to a failed evacuation is exposed."
+    },
+    {
+      "week": 13,
+      "episodes": "85-91",
+      "arc": "First Snow: food caches fail, animal tracks vanish and the red Greyglass mast blinks above the tree line."
+    },
+    {
+      "week": 14,
+      "episodes": "92-98",
+      "arc": "The Windstairs: the survivors climb avalanche terrain, recover Sela's access marker and enter an observatory that appears abandoned."
+    },
+    {
+      "week": 15,
+      "episodes": "99-105",
+      "arc": "Two Claims: Ansel Vey and the Measure arrive, offering supplies in exchange for authority as Soren repairs Greyglass's spring and cistern."
+    },
+    {
+      "week": 16,
+      "episodes": "106-112",
+      "arc": "Making Water Run: the community restores drainage, sanitation and micro-hydro power while Jun detects machinery operating below them."
+    },
+    {
+      "week": 17,
+      "episodes": "113-119",
+      "arc": "Rules for the Living: Greyglass debates leadership, medical isolation and ration ownership while the buried repeater begins waking."
+    },
+    {
+      "week": 18,
+      "episodes": "120-126",
+      "arc": "All Faces North: a pulse turns the Held toward Greyglass. Winter arrives, newcomers seek shelter and the community builds a screened isolation cabin."
+    },
+    {
+      "week": 19,
+      "episodes": "127-133",
+      "arc": "Open Books: inventory fraud, food spoilage and private deals threaten the sanctuary until Lio demands that all stores and decisions become public."
+    },
+    {
+      "week": 20,
+      "episodes": "134-140",
+      "arc": "The Useful Monster: Ansel uses a patterned beacon to save Greyglass, making signal control seem safer than Nara's uncertain freedom."
+    },
+    {
+      "week": 21,
+      "episodes": "141-147",
+      "arc": "Walls Inside Walls: Tamsin uncovers confinement rooms, Elias discovers illegal Held experiments and the sanctuary splits between consent and control."
+    },
+    {
+      "week": 22,
+      "episodes": "148-154",
+      "arc": "The Buried Archive: betrayal opens Greyglass's lower vault. Sela's full recording exposes Aster Vale, Halden Vey and the original override."
+    },
+    {
+      "week": 23,
+      "episodes": "155-161",
+      "arc": "What the Signal Can Undo: Jun reconstructs the inverse pattern while the community learns its cost: no mast, no turbine coils and no guaranteed cure."
+    },
+    {
+      "week": 24,
+      "episodes": "162-168",
+      "arc": "The Measure Takes Greyglass: Ansel seizes the key and activates a control carrier, drawing the Held into a ring around the mountain."
+    },
+    {
+      "week": 25,
+      "episodes": "169-175",
+      "arc": "Broadcast the Truth: Nara's group retakes the archive room, Lio sends the evidence and a blizzard turns defense into a fight for heat and water."
+    },
+    {
+      "week": 26,
+      "episodes": "176-180",
+      "arc": "After the Hum: Greyglass survives a powerless night, Ansel returns the key and the inverse transmission ends the repeating carrier. The community begins again under three irregular lights from another valley."
+    }
+  ],
+  "episode_format": [
+    {
+      "segment": "Triple Hook",
+      "time": "0:00-0:12",
+      "purpose": "Shot 1 contains a spoken hook within the first three seconds, the episode's most striking visual and a matching on-screen caption of no more than six words. It opens a question and never begins with a title."
+    },
+    {
+      "segment": "Lock-In Zone",
+      "time": "0:12-0:36",
+      "purpose": "Shots 2-3 deliver two or three short sentences that escalate immediate danger and promise the episode's answer or survival payoff."
+    },
+    {
+      "segment": "Body Block 1",
+      "time": "0:36-1:36",
+      "purpose": "Shots 4-8 establish the daily survival problem, character conflict and one specific practical technique."
+    },
+    {
+      "segment": "Rehook 1",
+      "time": "1:36-1:48",
+      "purpose": "Shot 9 lands its rehook at approximately 1:40, revealing that the apparent problem is incomplete or more dangerous."
+    },
+    {
+      "segment": "Body Block 2",
+      "time": "1:48-3:12",
+      "purpose": "Shots 10-16 test the technique, complicate relationships and advance one visual or audio clue in the larger mystery."
+    },
+    {
+      "segment": "Rehook 2",
+      "time": "3:12-3:24",
+      "purpose": "Shot 17 lands its second rehook at approximately 3:20 with a discovery, short character line or reversal."
+    },
+    {
+      "segment": "Body Block 3",
+      "time": "3:24-4:36",
+      "purpose": "Shots 18-23 force a choice, show its practical consequences and deliver the episode's partial payoff."
+    },
+    {
+      "segment": "Cliffhanger and CTA",
+      "time": "4:36-5:00",
+      "purpose": "Shots 24-25 reveal tomorrow's unavoidable danger. The narrator gives one brief CTA tied directly to that cliffhanger. Every episode totals exactly 25 twelve-second shots."
+    }
+  ],
+  "reels": {
+    "per_episode": 4,
+    "angles": [
+      "Cliffhanger reel: open on the episode's strongest consequence with matching spoken, visual and maximum-six-word text hooks; lock in with two short stakes lines; reveal context in two body blocks separated by fresh questions; stop just before the answer.",
+      "Survival reel: hook a specific mistake such as 'BOILING DIDN'T FIX IT'; promise the correct method; show the practical steps and limitation; rehook with the hidden danger; finish with the result.",
+      "Moral-choice reel: hook the exact impossible choice, present both costs in the audience's words, rehook when a secret changes the decision and cut on the character's answer or its consequence.",
+      "Mystery-clue reel: hook one visual or sound clue, connect it to an earlier episode, rehook with the clue's second meaning and end on a theory-provoking question."
+    ],
+    "cta": "Primary CTA: 'Watch the full five-minute episode on our channel.' Cliffhanger variants name the promised payoff, such as 'Tomorrow, we find out who sounded the second siren.' Comment variants use one relevant word, such as 'Comment WATER for the full episode.'"
+  },
+  "episodes": [
+    {
+      "n": 1,
+      "title": "Three Seconds at 7:17",
+      "logline": "During an ordinary courier shift, every phone in Meridian emits the same impossible tone. Nara secures an analog emergency pouch, avoids a stalled elevator and discovers that an undeliverable package contains a tape speaking directly to her.",
+      "cliffhanger": "The tape warns that the second siren will start something. Outside Nara's window, the city sounds the first."
+    },
+    {
+      "n": 2,
+      "title": "The Morning Without Birds",
+      "logline": "Nara and Jun investigate the silent rooftops while a pressure advisory hits Calder Row. They fill clean containers before service stops and learn that cloudy or particle-contaminated water cannot be made safe by guesswork.",
+      "cliffhanger": "A magnet held beside Nara's tap pulls a hair-thin copper filament against the glass."
+    },
+    {
+      "n": 3,
+      "title": "The Water Is Listening",
+      "logline": "Nara takes the filament to Soren at Bellwether Waterworks. He demonstrates sampling, protected storage and the difference between disinfection and filtration before finding pressure pulses arriving every seventeen seconds.",
+      "cliffhanger": "The pressure map traces a perfect line beneath the abandoned Line Nine subway."
+    },
+    {
+      "n": 4,
+      "title": "The Man Who Followed a Metronome",
+      "logline": "Paramedic Elias treats a confused commuter who walks toward every repeating sound. He uses a safe recovery position and checks breathing instead of restraining the patient, but a ticking diagnostic device triggers a violent pursuit.",
+      "cliffhanger": "After the metronome stops, the patient hums the exact tone hidden on Nara's tape."
+    },
+    {
+      "n": 5,
+      "title": "The Drill Below Line Nine",
+      "logline": "Nara, Jun and Elias enter Line Nine during a city emergency drill. They mark two exits, count stairs and refuse to trust an elevator, then discover active equipment in a station officially closed for nine years.",
+      "cliffhanger": "A maintenance screen changes the next drill time to 7:17 the following morning."
+    },
+    {
+      "n": 6,
+      "title": "Dust That Climbed Glass",
+      "logline": "Dry metallic dust falls during cloudless weather. The group seals one room, uses fitted particulate masks and wet-cleans surfaces while Lio rescues a forgotten air monitor from his school workshop.",
+      "cliffhanger": "Inside the sealed room, the collected dust moves toward Jun's unpowered radio."
+    },
+    {
+      "n": 7,
+      "title": "Seventeen Hours",
+      "logline": "Jun uses an analog receiver and written verification log to separate rumor from real emergency traffic. What sounds like a countdown is actually a sequence activating seventeen municipal towers.",
+      "cliffhanger": "Tower One powers itself on, and every dark phone on North Span lights white."
+    },
+    {
+      "n": 8,
+      "title": "The Second Siren",
+      "logline": "Quietfall strikes during the morning commute. Nara, Jun and Lio escape a building fire by staying low, checking door heat and using stairs while the grid collapses around them.",
+      "cliffhanger": "In the silent street below, dozens of separated silhouettes turn toward Lio's steadily blinking bicycle lamp."
+    },
+    {
+      "n": 9,
+      "title": "Water Behind the Wall",
+      "logline": "Trapped above a burning lower floor, the survivors ration carried water and recover usable water from an intact heater only after shutting its power and inlet. Elias warns that radiator and fire-suppression water may be chemically unsafe.",
+      "cliffhanger": "Someone on the other side of the wall taps in a perfect seventeen-second loop."
+    },
+    {
+      "n": 10,
+      "title": "The Pharmacy Door",
+      "logline": "Nara meets structural inspector Tamsin while seeking dressings and essential medicine. They clean a wound with potable water, prioritize labeled supplies and refuse dangerous mystery pills, but disagree over leaving medicine for strangers.",
+      "cliffhanger": "Tamsin sees her missing father outside, calmly using the pharmacy's old employee code."
+    },
+    {
+      "n": 11,
+      "title": "Never Run in Rhythm",
+      "logline": "Tamsin's father leads other Held through familiar back passages. The group breaks its running cadence, disables repeating alarms and uses chaotic construction noise to cross an alley without a direct confrontation.",
+      "cliffhanger": "The Held ignore the survivors and gather instead around a buried water pipe beneath Calder Row."
+    },
+    {
+      "n": 12,
+      "title": "Boiling Wasn't Enough",
+      "logline": "At Bellwether, Soren proves that boiling disinfects biological hazards but leaves Morrow particles behind. The survivors build a settling and prefilter station for dirty utility water while preserving their limited certified filters for drinking.",
+      "cliffhanger": "Bellwether's clean reserve begins draining through a valve no living operator opened."
+    },
+    {
+      "n": 13,
+      "title": "One Warm Room",
+      "logline": "A cold front hits the powerless district. The group chooses one small interior room, insulates windows without blocking ventilation, layers bedding and keeps all combustion devices outside to avoid carbon monoxide.",
+      "cliffhanger": "Their sealed window fogs from the outside, revealing a handprint on the fourth floor."
+    },
+    {
+      "n": 14,
+      "title": "The Northbound Lie",
+      "logline": "An official broadcast orders survivors toward North Span. Jun cross-checks timestamps, Nara caches water off-route and Tamsin maps a secondary exit before they discover the message is a flawless seventeen-second loop.",
+      "cliffhanger": "Sela's tape resumes with a hidden final sentence: 'Whatever happens, do not go north.'"
+    }
+  ],
+  "episode1": {
+    "title": "Three Seconds at 7:17",
+    "hook_text": "EVERY PHONE SCREAMED",
+    "beats": [
+      {
+        "time": "0:00-0:12",
+        "beat": "Shot 1, triple hook. Visual: Nara stands beneath the elevated rail as every phone around her turns white at once and emits a piercing tone. Spoken hook: 'At 7:17, every phone in Meridian screamed.' On-screen text: 'EVERY PHONE SCREAMED.'"
+      },
+      {
+        "time": "0:12-0:36",
+        "beat": "Shots 2-3, lock-in. Over frozen faces and a phone smoking in the rain, Nara narrates: 'It lasted three seconds. By lunch, the birds were gone. By dark, a dead woman would say my name.'"
+      },
+      {
+        "time": "0:36-1:00",
+        "beat": "Shots 4-5 rewind nine minutes. Nara starts an ordinary courier shift, checks her tires and packs a compact analog pouch containing water, flashlight, paper map, whistle and battery radio."
+      },
+      {
+        "time": "1:00-1:36",
+        "beat": "Shots 6-8. Nara refuses a crowded elevator after its lights flicker and takes the stairs. At the courier counter she receives a sealed metal package addressed to the closed Aster Vale Civic Acoustics office."
+      },
+      {
+        "time": "1:36-1:48",
+        "beat": "Shot 9, rehook at approximately 1:40. Nara holds up her phone after the citywide tone. Narration: 'But the dead phone wasn't the strange part. The package was humming back.'"
+      },
+      {
+        "time": "1:48-2:24",
+        "beat": "Shots 10-12. The destination has vanished from the delivery system, so Nara takes the parcel to Jun's repair kiosk. Jun removes all batteries from the workbench, yet the parcel still vibrates every seventeen seconds."
+      },
+      {
+        "time": "2:24-3:12",
+        "beat": "Shots 13-16. A heat-softened seam opens without being forced. Inside are a brass analog key, a small glass vial of copper-colored dust and an old microcassette labeled 'GREYGLASS: HAND DELIVERY ONLY.'"
+      },
+      {
+        "time": "3:12-3:24",
+        "beat": "Shot 17, rehook at approximately 3:20. The cassette begins before Jun touches play. Narration: 'Then the tape said my name.' A woman's voice says, 'Nara Venn, do not deliver this.'"
+      },
+      {
+        "time": "3:24-3:48",
+        "beat": "Shots 18-19. Nara recognizes the voice as her mother Sela, missing for eight years. Sela warns that digital messages can be rewritten and tells Nara to keep the key dry and away from powered speakers."
+      },
+      {
+        "time": "3:48-4:12",
+        "beat": "Shots 20-21. Jun wants to scan the vial, but Nara seals it inside two clear bags and places it in a rigid container instead of opening an unknown substance. The cassette mentions a 'first siren' and abruptly jams."
+      },
+      {
+        "time": "4:12-4:36",
+        "beat": "Shots 22-23. Nara returns to Calder Row as birds lift from every roof and fly west. Lio asks why every emergency speaker has turned toward the same section of sky."
+      },
+      {
+        "time": "4:36-5:00",
+        "beat": "Shots 24-25, cliffhanger and CTA. The cassette unsticks: 'The first siren is a test. The second starts it.' A single city siren sounds as Nara looks toward a white phone glowing in an empty apartment. Narration and CTA: 'Tomorrow, we find out what the second siren starts. Subscribe and watch Episode 2.'"
+      }
+    ]
+  }
+}

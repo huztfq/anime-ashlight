@@ -1,0 +1,33 @@
+# secrets: never commit
+.env
+.env.*
+*.key
+client_secret*.json
+token*.json
+
+# python
+.venv/
+__pycache__/
+
+# generated media and working files (they live in Google Drive)
+*.mp4
+*.mov
+*.mp3
+*.wav
+!sfx_kit/*.mp3
+frames/
+frames_v/
+build/
+audio/
+reels/
+reels_audio/
+upload/
+samples/
+*.log
+costs.jsonl
+
+# past episodes: keep only the story files for continuity
+ep*/*
+!ep*/story.json
+!ep*/STORY.md
+!ep*/reels.json
