@@ -23,7 +23,8 @@ YouTube Shorts. Planned run: 180 episodes, city → collapse → mountains → s
 6. Thumbnail 1280x720: the strongest frame, a 2-3 word line in Arial Rounded Bold with the last word ember orange,
    "AFTER THE HUM | EP N" small. Phone copy under 30 MB (1280x720, ~520 kbps) for SendUserFile.
 7. Copy to `~/Desktop/After the Hum/Episode N/` and write that day's upload kit as a Claude Doc. Also save the kit
-   as `upload/epNN_upload_kit.md` (export the doc as Markdown).
+   as `upload/epNN_upload_kit.pdf` (docs `export` with container kind "project", file = the tab id, format pdf;
+   decode the base64 from the saved result).
 8. `python3 upload_drive.py N` → Google Drive `My Drive/After the Hum/<YYYY-MM-DD> - Episode NN/` with every
    `upload/epNN_*` file. Stdlib only, re-runnable (skips files already there). Auth: `GOOGLE_CLIENT_ID`,
    `GOOGLE_CLIENT_SECRET`, `GOOGLE_REFRESH_TOKEN` in `.env` (one-time `google_auth.py`); `DRIVE_ROOT_ID` is set

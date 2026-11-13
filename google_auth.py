@@ -31,7 +31,7 @@ url = "https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode({
     "client_id": e["GOOGLE_CLIENT_ID"], "redirect_uri": redirect, "response_type": "code", "scope": SCOPE,
     "access_type": "offline", "prompt": "consent", "state": state,
     "code_challenge": challenge, "code_challenge_method": "S256"})
-print("Opening the browser for Google sign-in...")
+print("Opening the browser for Google sign-in. If no tab opens, visit:\n" + url, flush=True)
 webbrowser.open(url)
 while "code" not in got:
     srv.handle_request()
