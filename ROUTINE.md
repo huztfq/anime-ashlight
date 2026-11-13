@@ -1,6 +1,7 @@
 # Daily routine: make today's AFTER THE HUM episode
 
-You are running unattended (usually in the cloud, no Mac, nobody to ask). Read `CLAUDE.md` first: every rule there
+You are running unattended (usually in the cloud, no Mac, nobody to ask). Read `CLAUDE.md` and the "Reels and
+short-form rules" section of `HANDOFF.md` first: every rule there
 applies. The goal each day: Episode N (5:09 film), its 4 reels, thumbnail and reel covers, subtitles and the Day N
 upload kit, all in Google Drive (`After the Hum/<date> - Episode NN`) and a Notion page "Day N · date · Episode N
 upload kit". Posting to YouTube, Instagram and TikTok is done by the user, never by you.

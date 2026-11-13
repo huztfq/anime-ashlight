@@ -49,7 +49,7 @@ and confirm it finishes.
      script reads `.env`.
 3. **Schedule:** daily, about 6:00 AM in the user's time zone, so files are ready before the first 9 AM post.
 4. **Prompt:**
-   `Read CLAUDE.md and ROUTINE.md, then make today's episode by following ROUTINE.md exactly. Do not git push.`
+   `Read CLAUDE.md, HANDOFF.md and ROUTINE.md, then make today's episode by following ROUTINE.md exactly. Do not git push.`
 5. **Test:** use Run now and watch it.
    - A day takes 1–2 hours, mostly about 190 Qwen images at ~2 parallel calls.
    - Claude's docs list no total time limit for routines. Each command is capped at about 10 minutes in the
