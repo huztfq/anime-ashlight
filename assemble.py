@@ -3,12 +3,12 @@ on-screen hook text over the first 3s, CTA text over the last shot, an end card,
 Usage: assemble.py out.mp4 [lo-hi]"""
 import json, pathlib, subprocess, sys
 from PIL import Image
-from mix import mix, SHOT_S, END_S
+from mix import mix, layout, total_len, END_S
 from textcards import banner, SERIF
 from motion import kinetic
 
 W, H, FPS = 1920, 1080, 25
-POSE_S, XF = 3, 0.35
+XF = 0.35
 STORY = json.loads(pathlib.Path("story.json").read_text())
 B = pathlib.Path("build"); B.mkdir(exist_ok=True)
 
@@ -29,19 +29,21 @@ def pose_clip(png, dest, secs, i):
     return dest
 
 
-def shot_clip(s):
+def shot_clip(s, length):
+    """The shot's 4 poses spread evenly over `length` (12 s, or longer when its voices need it; see mix.layout)."""
     dest = B / f"shot{s['id']:02d}.mp4"
     if dest.exists():
         return dest
     pngs = [pathlib.Path(f"frames/s{s['id']:02d}_{i}.png") for i in range(1, 5)]
     pngs = [p if p.exists() else pngs[0] for p in pngs]
-    secs = POSE_S + XF  # each clip overlaps the next by XF
-    clips = [pose_clip(p, B / f"s{s['id']:02d}_{i}.mp4", secs if i < 4 else POSE_S, i) for i, p in enumerate(pngs, 1)]
+    pose_s = length / 4
+    secs = pose_s + XF  # each clip overlaps the next by XF
+    clips = [pose_clip(p, B / f"s{s['id']:02d}_{i}.mp4", secs if i < 4 else pose_s, i) for i, p in enumerate(pngs, 1)]
     fc, last = [], "[0]"
     for i in range(1, 4):
-        fc.append(f"{last}[{i}]xfade=transition=fade:duration={XF}:offset={i*POSE_S}[x{i}]"); last = f"[x{i}]"
+        fc.append(f"{last}[{i}]xfade=transition=fade:duration={XF}:offset={i * pose_s:.3f}[x{i}]"); last = f"[x{i}]"
     args = sum((["-i", str(c)] for c in clips), [])
-    ff(*args, "-filter_complex", ";".join(fc) + f";{last}vignette=PI/6[v]", "-map", "[v]", "-t", str(SHOT_S),
+    ff(*args, "-filter_complex", ";".join(fc) + f";{last}vignette=PI/6[v]", "-map", "[v]", "-t", str(length),
        "-c:v", "libx264", "-preset", "fast", "-crf", "17", "-pix_fmt", "yuv420p", str(dest))
     return dest
 
@@ -61,17 +63,18 @@ def end_card():
 def build(out, lo=1, hi=None):
     hi = hi or len(STORY["shots"])
     shots = [s for s in STORY["shots"] if lo <= s["id"] <= hi]
-    vids = [shot_clip(s) for s in shots] + [end_card()]
+    L = layout(lo, hi)
+    vids = [shot_clip(s, L[s["id"]]["len"]) for s in shots] + [end_card()]
     (B / "list.txt").write_text("".join(f"file '{p.name}'\n" for p in vids))
     ff("-f", "concat", "-safe", "0", "-i", str(B / "list.txt"), "-c", "copy", str(B / "video.mp4"))
-    total = SHOT_S * len(shots) + END_S
+    total = total_len(L)
     # motion-graphic text: hook (0-3.2s), the two rehooks (shots 9 and 17), CTA over the last shot
     cards = [(kinetic(STORY.get("hook_text", "").upper(), B / "k_hook.mov", W, H, 0.8, 92, 3.2, FPS), 0)]
     for k, (sid, txt) in enumerate(zip((9, 17), STORY.get("rehook_texts", []))):
-        if lo <= sid <= hi:
-            cards.append((kinetic(txt.upper(), B / f"k_rehook{k}.mov", W, H, 0.8, 84, 3.4, FPS), SHOT_S * (sid - lo) + 0.4))
+        if sid in L:
+            cards.append((kinetic(txt.upper(), B / f"k_rehook{k}.mov", W, H, 0.8, 84, 3.4, FPS), L[sid]["start"] + 0.4))
     if hi == len(STORY["shots"]):
-        cards.append((kinetic(STORY.get("cta_text", ""), B / "k_cta.mov", W, H, 0.82, 70, 5.6, FPS), SHOT_S * (len(shots) - 1) + 6))
+        cards.append((kinetic(STORY.get("cta_text", ""), B / "k_cta.mov", W, H, 0.82, 70, 5.6, FPS), L[hi]["start"] + 6))
     audio = mix(str(B / "mix.m4a"), lo, hi)
     args, fc, last = ["-i", str(B / "video.mp4")], [], "[0]"
     for i, (mov, t0) in enumerate(cards, 1):

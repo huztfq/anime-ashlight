@@ -2,7 +2,7 @@
 
 You are running unattended (usually in the cloud, no Mac, nobody to ask). Read `CLAUDE.md` and the "Reels and
 short-form rules" section of `HANDOFF.md` first: every rule there
-applies. The goal each day: Episode N (5:09 film), its 4 reels, thumbnail and reel covers, subtitles and the Day N
+applies. The goal each day: Episode N (about a 5:10 film), its 4 reels, thumbnail and reel covers, subtitles and the Day N
 upload kit, all in Google Drive (`After the Hum/<date> - Episode NN`) and a Notion page "Day N · date · Episode N
 upload kit". Posting to YouTube, Instagram and TikTok is done by the user, never by you.
 
@@ -36,7 +36,8 @@ After it finishes (the CHECKS list at the end):
 - Thumbnail: open it. The words must not cover a face and must read at phone size. If they do cover a face, re-run
   `python3 make_thumb.py N <other shot> "<text>" [pose]` and update `thumbnail_shot`/`thumbnail_text` in kit.json.
 - Reel covers: open all 4; hook text readable, faces visible.
-- Film: `ffprobe` duration about 5:09; spot-check frames at 0:01 (hook text), ~1:40 and ~3:20 (rehooks), the end (CTA).
+- Film: `ffprobe` duration about 5:10 (a shot runs past 12 s when its narration and line need it, so voices never
+  overlap; over 5:40 means the script is too wordy). Spot-check 0:01 (hook text), the rehooks at shots 9 and 17, the end (CTA).
 - Reels: 4 files, each 30–70 s, captions burned in.
 - Kit (`upload/epNN_upload_kit.md`): 3 titles with "AFTER THE HUM", chapters starting 0:00, reel captions present.
 - Drive folder and Notion page links open and list everything.

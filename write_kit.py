@@ -29,13 +29,18 @@ def mmss(t):
     return f"{int(t // 60)}:{int(t % 60):02d}"
 
 
-shots = [{"shot": s["id"], "start": mmss(SHOT_S * (s["id"] - 1)), "part": s["part"], "narration": s["narration"]}
+try:  # real shot starts (shots stretch when their voices need it); plain 12 s steps if the audio isn't here
+    from mix import layout
+    STARTS = {k: x["start"] for k, x in layout().items()}
+except Exception:
+    STARTS = {s["id"]: SHOT_S * (s["id"] - 1) for s in STORY["shots"]}
+shots = [{"shot": s["id"], "start": mmss(STARTS[s["id"]]), "part": s["part"], "narration": s["narration"]}
          for s in STORY["shots"]]
 BRIEF = f"""You write the YouTube and social upload kit for Episode {N} of AFTER THE HUM, an original dark anime survival
 series by the channel Ashlight Stories (daily 5-minute episodes; arc: city -> collapse -> mountains -> sanctuary).
 Episode {N}: "{STORY['title']}". Logline: {STORY['logline']}
 On-screen hook: {STORY['hook_text']}. Next episode: "{NEXT_TITLE or 'Episode ' + str(N + 1)}".
-Shots with start times (each 12 s; the film is about 5:09):
+Shots with start times (about 12 s each; the film is about 5:10):
 {json.dumps(shots, indent=0)}
 
 Yesterday's episode (Episode {N - 1}) has 4 reels to post today on Instagram, TikTok and YouTube Shorts:

@@ -11,7 +11,31 @@ for line in pathlib.Path(".env").read_text().splitlines():
 MODEL = "gpt-5.6-sol"
 N = int(sys.argv[1])
 SERIES = json.loads(pathlib.Path("series.json").read_text())
-EP = next(e for e in SERIES["episodes"] if e["n"] == N)
+
+
+def in_range(spec, n):
+    """'15-21' or '7' contains n?"""
+    a, _, b = str(spec).partition("-")
+    return int(a) <= n <= int(b or a)
+
+
+def arc_outline(n):
+    """series.json only outlines the first episodes; past them, brief the writer from the week and month arcs."""
+    week = next((w for w in SERIES.get("weeks", []) if in_range(w["episodes"], n)), None)
+    month = next((m for m in SERIES.get("months", []) if in_range(m["episodes"], n)), None)
+    pts = month.get("turning_points", []) if month else []
+    tagged = lambda p: int(p.split(":")[0].split()[-1]) if p.startswith("Episode ") else 0
+    return {"n": n, "title": None, "logline": None, "cliffhanger": None,
+            "note": ("No outline exists for this episode. Invent its title, logline and cliffhanger so it continues "
+                     "straight from the previous episode, advances this week's arc by one clear step and does not "
+                     "jump ahead of later turning points."),
+            "week_arc": week and week["arc"], "month": month and f"{month['name']}: {month['summary']}",
+            "turning_point_this_episode": [p for p in pts if tagged(p) == n],
+            "next_turning_points": [p for p in pts if tagged(p) > n][:2],
+            "cast_available": [c["name"] for c in SERIES["cast"] if c["joins_episode"] <= n]}
+
+
+EP = next((e for e in SERIES["episodes"] if e["n"] == N), None) or arc_outline(N)
 BEATS = SERIES["episode1"] if N == 1 else None
 PREV = pathlib.Path(f"ep{N-1:02d}/story.json")
 PREV = json.loads(PREV.read_text()) if PREV.exists() else None
@@ -40,7 +64,8 @@ PRODUCTION RULES:
 - Exactly 25 shots, 12 seconds each (5:00), following the series episode format (hook, lock-in, body 1, rehook ~1:40,
   body 2, rehook ~3:20, body 3, cliffhanger + CTA). Give every shot a "part".
 - The narrator is Nara, first person, past tense. Max 22 words of narration per shot (it must fit in 12 seconds next to
-  any character line). Optional one short character line per shot, max 10 words. Voices off screen (a tape, a radio) are
+  any character line). Optional one short character line per shot, max 10 words. Narration and line together max
+  26 words per shot: they play one after the other, never over each other, and must fit in the 12 seconds. Voices off screen (a tape, a radio) are
   fine as lines.
 - Images are AI stills: each shot has 4 "poses" = the same camera framing and background, only the characters'
   pose/expression changes. At most 3 named characters on screen. Describe framing, background and poses in plain,

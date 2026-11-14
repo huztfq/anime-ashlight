@@ -1,6 +1,6 @@
 """YouTube subtitles for the episode, timed the same way mix.py places the voices. Usage: make_srt.py out.srt"""
 import json, pathlib, sys
-from mix import dur, SHOT_S, TITLE_S
+from mix import dur, layout
 
 STORY = json.loads(pathlib.Path("story.json").read_text())
 A = pathlib.Path("audio")
@@ -12,9 +12,10 @@ def ts(t):
 
 
 cues = []
+L = layout()
 for s in STORY["shots"]:
-    t0 = TITLE_S + SHOT_S * (s["id"] - 1)
-    t = t0 + 0.6
+    x = L[s["id"]]
+    t = x["vo"]
     vo = A / f"vo{s['id']:02d}.mp3"
     if vo.exists():
         d = dur(vo)
@@ -28,10 +29,9 @@ for s in STORY["shots"]:
                 a = t + d * (0 if k == 0 else half / len(words))
                 b = t + d * (half / len(words) if k == 0 else 1)
                 cues.append((a, b, " ".join(chunk)))
-        t += d + 0.4
     line = A / f"line{s['id']:02d}.mp3"
-    if line.exists():
-        a = min(t, t0 + SHOT_S - dur(line) - 0.2)
+    if x["line"] is not None:
+        a = x["line"]
         cues.append((a, a + dur(line), f"{names.get(s['line']['character'], '')}: {s['line']['text']}"))
 pathlib.Path(sys.argv[1]).write_text("".join(f"{i}\n{ts(a)} --> {ts(b)}\n{txt}\n\n" for i, (a, b, txt) in enumerate(cues, 1)))
 print(len(cues), "cues")

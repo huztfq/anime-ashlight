@@ -63,7 +63,7 @@ and confirm it finishes.
 | --- | --- |
 | Code + rules | GitHub `huztfq/anime-ashlight` (also on the user's Mac at `~/Documents/Projects/Inferaform/anime`) |
 | Daily output | Google Drive → My Drive → `After the Hum/<YYYY-MM-DD> - Episode NN/` |
-| State between days | Drive `After the Hum/_state/`: `state.json` (`last_episode`), `epNN_story.json`, `epNN_reels.json`, `ref_<character>.png` |
+| State between days | Drive `After the Hum/_state/`: `state.json` (`last_episode`), `epNN_story.json`, `epNN_reels.json`, `ref_<character>.png`, `voices.json` (every designed voice id, so a character keeps one voice) |
 | Upload guides | Notion page "After the Hum · Ashlight Stories" → "Day N · date · Episode N upload kit" sub-pages |
 | Rules for you | Notion "Production Guide" (= CLAUDE.md) and "🤖 Daily Routine Playbook" (= ROUTINE.md) |
 
@@ -94,7 +94,7 @@ and confirm it finishes.
    (pose 1 drawn from the references, poses 2–4 as edits of pose 1). ElevenLabs makes the narrator, lines,
    effects and score. `plan_reels.py` plans the 4 reels.
 5. **reels_plan:** Reel narration with word timings, then vertical 9:16 frames for the shots the reels use.
-6. **assemble:** The 5:09 film, then `upload/epNN_full_quality.mp4` and `epNN_subtitles_en.srt`.
+6. **assemble:** The film (about 5:10; shots stretch past 12 s so voices never overlap), then `upload/epNN_full_quality.mp4` and `epNN_subtitles_en.srt`.
 7. **reels:** 4 reels with burned-in captions, then `upload/epNN_reel1-4.mp4`.
 8. **covers:** `make_covers.py`: 1080×1920 reel covers with the hook text in the centre-safe area.
 9. **kit:** `write_kit.py` uses OpenAI to write titles, description, chapters, tags, reel captions and Shorts titles,

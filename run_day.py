@@ -84,6 +84,14 @@ def main():
         dest = HERE / P / name.split("_", 1)[1]
         if not dest.exists() and story_ep() != n - 1 and name in files:
             d.download(files[name]["id"], dest)
+    # designed voices (audio.py adds one per new speaker): keep every id ever made so voices never change
+    if "voices.json" in files:
+        tmp = HERE / "voices.remote.json"
+        d.download(files["voices.json"]["id"], tmp)
+        vf = HERE / "voices.json"
+        local = json.loads(vf.read_text()) if vf.exists() else {}
+        vf.write_text(json.dumps({**local, **json.loads(tmp.read_text())}, indent=2))
+        tmp.unlink()
     (HERE / "refs").mkdir(exist_ok=True)
     for name, f in files.items():
         if name.startswith("ref_") and not (HERE / "refs" / name[4:]).exists():
@@ -114,6 +122,8 @@ def main():
     if not (HERE / "frames" / "s25_4.png").exists() or not (HERE / "audio").exists() or not (HERE / "reels.json").exists():
         run(PY, "qwen_frames.py", "refs")
         parallel([PY, "qwen_frames.py", "shots", "1-25"], [PY, "audio.py"], [PY, "plan_reels.py"])
+    if (HERE / "voices.json").exists():  # save new voice ids right away, so a later failure can't lose them
+        d.replace(HERE / "voices.json", state_dir)
     if until == "frames":
         return
 

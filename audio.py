@@ -25,12 +25,40 @@ def log(what, r):
                             "character_cost": r.headers.get("character-cost")}) + "\n")
 
 
+DRY = (" Recorded dry in a treated studio on a close microphone: no reverb, no echo, no room sound, no background "
+       "noise.")
+MAX_FLOOR_DB = -48  # quietest 5% of the audio vs its peak; above this the voice carries audible room echo
+
+
+def noise_floor(mp3_bytes):
+    """dB of the quietest 5% of 10 ms frames relative to the peak. Dry voices sit near -55; reverb lifts it."""
+    import array, math, subprocess
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", "pipe:0", "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+                         input=mp3_bytes, capture_output=True, check=True).stdout
+    a, fr = array.array("h", raw), 160
+    db = sorted(10 * math.log10(sum(x * x for x in a[i:i + fr]) / fr + 1e-9) for i in range(0, len(a) - fr, fr))
+    return db[len(db) // 20] - db[-1]
+
+
 def design_voice(name, description, sample):
-    """Create a voice from a text description (for characters no stock voice fits)."""
-    r = requests.post(f"{API}/text-to-voice/design", headers=H, timeout=300, json={
-        "voice_description": description, "text": sample, "model_id": "eleven_multilingual_ttv_v2"})
-    r.raise_for_status(); log(f"design-{name}", r)
-    gid = r.json()["previews"][0]["generated_voice_id"]
+    """Create a voice from a text description (for characters no stock voice fits). Of the previews ElevenLabs
+    returns, keep the driest one (no baked-in reverb); refuse if every preview still has room echo."""
+    description = (description.rstrip() + DRY)[:1000]
+    best = None
+    for attempt in range(2):
+        r = requests.post(f"{API}/text-to-voice/design", headers=H, timeout=300, json={
+            "voice_description": description, "text": sample, "model_id": "eleven_multilingual_ttv_v2"})
+        r.raise_for_status(); log(f"design-{name}", r)
+        for p in r.json()["previews"]:
+            fl = noise_floor(base64.b64decode(p["audio_base_64"]))
+            print(f"voice {name}: preview floor {fl:.0f} dB", flush=True)
+            if best is None or fl < best[0]:
+                best = (fl, p["generated_voice_id"])
+        if best[0] <= MAX_FLOOR_DB:
+            break
+    if best[0] > MAX_FLOOR_DB:
+        raise RuntimeError(f"voice design for {name}: every preview has room echo (best {best[0]:.0f} dB)")
+    gid = best[1]
     r = requests.post(f"{API}/text-to-voice", headers=H, timeout=120, json={
         "voice_name": f"{STORY['title']} - {name}", "voice_description": description, "generated_voice_id": gid})
     r.raise_for_status()
@@ -52,8 +80,9 @@ def voices():
         sample = (sample + " " + STORY["logline"])[:500]  # the design endpoint wants 100+ characters of sample text
         try:
             v[key] = design_voice(name, desc[:1000], sample)
-        except requests.HTTPError as e:
-            print(f"voice design refused for {name} ({e.response.status_code}: {e.response.text[:200]}); using a stock voice", flush=True)
+        except (requests.HTTPError, RuntimeError) as e:
+            why = f"{e.response.status_code}: {e.response.text[:200]}" if isinstance(e, requests.HTTPError) else str(e)
+            print(f"voice design failed for {name} ({why}); using a stock voice", flush=True)
             v[key] = FALLBACK["narrator" if key == "narrator" else "female" if "girl" in desc.lower() or "woman" in desc.lower() else "male"]
         VOICES_FILE.write_text(json.dumps(v, indent=2))
     if STORY.get("narrator_character"):  # a first-person narrator speaks her own lines in the same voice
