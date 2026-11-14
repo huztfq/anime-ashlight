@@ -1,17 +1,58 @@
 """Build the 9:16 reels from reels.json: vertical pose frames with quick cuts, narrator VO, reused character
 lines, word-by-word captions, on-screen hook (0-3s) and CTA, ducked score + shot ambience.
 Usage: make_reels.py [reel ids...]"""
-import json, pathlib, subprocess, sys
+import json, pathlib, re, subprocess, sys
 from PIL import Image
 from mix import dur, SCORE_OFFSET, SHOT_S, voice_fx
 from textcards import banner
 from motion import kinetic
+
+
+WEAK = {"THE", "A", "AN", "AND", "OR", "TO", "OF", "FOR", "WITH", "AT", "FROM", "IN", "ON",
+        "BY", "AS", "BUT", "THEN", "THAN", "THAT", "THIS", "ITS", "OUR", "YOUR", "MY",
+        "BEFORE", "AFTER", "INTO", "OVER", "UNDER"}
+
+
+def group_words(words):
+    """Group caption words into 2-5 word beats, breaking on punctuation instead of mid-phrase."""
+    items = [w if isinstance(w, (list, tuple)) else (w, 0, 0) for w in words]
+    n, i, groups = len(items), 0, []
+
+    def core(tok):
+        return re.sub(r"[^A-Za-z0-9']+$", "", tok).upper()
+
+    def punct(tok):
+        return bool(re.search(r"[.?!;:—]$", tok)) or tok.endswith("...")
+
+    while i < n:
+        best, found = min(i + 3, n), False
+        for j in range(i + 1, min(i + 6, n + 1)):
+            tok = items[j - 1][0]
+            if punct(tok) or (tok.endswith(",") and j - i >= 2):
+                best, found = j, True
+                break
+        if not found:
+            for length in (4, 3, 5, 2):
+                j = i + length
+                if j <= n and core(items[j - 1][0]) not in WEAK:
+                    best = j
+                    break
+            else:
+                best = min(i + 3, n)
+        if n - best == 1 and best - i < 5:
+            best = n
+        groups.append(items[i:best])
+        i = best
+    return groups
+
 
 W, H, FPS = 1080, 1920, 30
 STORY = json.loads(pathlib.Path("story.json").read_text())
 REELS = json.loads(pathlib.Path("reels.json").read_text())["reels"]
 RA, A, FV = pathlib.Path("reels_audio"), pathlib.Path("audio"), pathlib.Path("frames_v")
 KIT = pathlib.Path("sfx_kit")
+LINE_IN = 0.35  # a reused character line starts this long into its shot, and its shot runs this long after it, so
+                # it never touches the narrator (2026-11-14 lesson: never overlap two voices; min gap 0.25 s)
 OUT = pathlib.Path("reels"); OUT.mkdir(exist_ok=True)
 
 
@@ -30,7 +71,11 @@ def timeline(r):
         for k, sh in enumerate(shots):  # a reused character line needs its shot long enough to finish
             line = A / f"line{sh['shot']:02d}.mp3"
             if sh.get("use_line") and line.exists():
-                lens[k] = max(lens[k], dur(line) + 0.4)
+                if vo.exists():  # a narrated section can't also carry a character line: they would overlap
+                    print(f"reel {r['id']} section {i}: dropping line{sh['shot']:02d} (section has narration)", flush=True)
+                    sh["use_line"] = False
+                    continue
+                lens[k] = max(lens[k], dur(voice_fx(line, "dialogue")) + 2 * LINE_IN)
         total = max(sum(lens), vo_len)
         lens = [l * total / sum(lens) for l in lens]
         segs, st = [], t
@@ -83,12 +128,11 @@ def captions(tl, total, work):
         if not vo:
             continue
         words = json.loads(vo.with_suffix(".json").read_text())
-        for g in range(0, len(words), 3):
-            group = words[g:g + 3]
+        for group in group_words(words):
             text = " ".join(w for w, _, _ in group).upper()
             for j, (_, ws, we) in enumerate(group):
                 end = group[j + 1][1] if j + 1 < len(group) else we + 0.15
-                png = banner(text, 92, work / f"cap{n:04d}.png", W, H, 0.7, highlight=j); n += 1
+                png = banner(text, 92, work / f"cap{n:04d}.png", W, H, 0.82, highlight=j); n += 1
                 events.append((st + ws, st + end, png))
     for _, _, _, segs, _ in tl:  # reused character lines get captions too, in blue, timed evenly by word
         for shot, s0, _, use_line in segs:
@@ -97,9 +141,11 @@ def captions(tl, total, work):
                 continue
             text = next(x["line"]["text"] for x in STORY["shots"] if x["id"] == shot).upper().split()
             per = dur(line) / max(1, len(text))
-            for g in range(0, len(text), 3):
-                png = banner(" ".join(text[g:g + 3]), 92, work / f"cap{n:04d}.png", W, H, 0.7, fill="#9FD8FF"); n += 1
-                events.append((s0 + 0.2 + g * per, s0 + 0.2 + min(len(text), g + 3) * per, png))
+            offset = 0
+            for group in group_words(text):
+                png = banner(" ".join(w if isinstance(w, str) else w[0] for w in group), 92, work / f"cap{n:04d}.png", W, H, 0.82, fill="#9FD8FF"); n += 1
+                events.append((s0 + LINE_IN + offset * per, s0 + LINE_IN + (offset + len(group)) * per, png))
+                offset += len(group)
     events.sort(key=lambda e: e[0])
     lines, t = [], 0.0
     for s, e, png in events:
@@ -129,7 +175,7 @@ def audio(r, tl, total, work):
             amb.append(f"[a{i}_{k}]")
             line = A / f"line{shot:02d}.mp3"
             if use_line and line.exists():
-                add(voice_fx(line, "dialogue"), s0 + 0.2, f"l{i}_{k}"); voice.append(f"[l{i}_{k}]")
+                add(voice_fx(line, "dialogue"), s0 + LINE_IN, f"l{i}_{k}"); voice.append(f"[l{i}_{k}]")
     # sound design on the exact frame: boom under the hook, whoosh on every cut, riser into each rehook, hit on rehooks + CTA
     fx = []
     def kit(name, t, vol):
@@ -158,13 +204,32 @@ def audio(r, tl, total, work):
     return work / "mix.m4a"
 
 
+def speech_spans(tl):
+    """(start, end, who) of every voice in the reel, sorted."""
+    sp = []
+    for st, _, _, segs, vo in tl:
+        if vo:
+            sp.append((st, st + dur(voice_fx(vo, "narration")), "narrator"))
+        for shot, s0, _, use_line in segs:
+            line = A / f"line{shot:02d}.mp3"
+            if use_line and line.exists():
+                sp.append((s0 + LINE_IN, s0 + LINE_IN + dur(voice_fx(line, "dialogue")), f"line{shot:02d}"))
+    return sorted(sp)
+
+
 def build(r):
     work = OUT / f"work{r['id']}"; work.mkdir(exist_ok=True)
     tl, total = timeline(r)
+    sp = speech_spans(tl)
+    gaps = [(b[0] - a[1], a[2], b[2]) for a, b in zip(sp, sp[1:]) if a[2] != b[2]]
+    bad = [g for g in gaps if g[0] < 0.25]
+    if bad:  # never ship two speakers on top of each other
+        raise SystemExit(f"reel {r['id']}: voices too close/overlapping: {bad}")
     v, caps, a = video(r, tl, work), captions(tl, total, work), audio(r, tl, total, work)
-    hook = kinetic(r["hook_text"].upper(), work / "k_hook.mov", W, H, 0.2, 100, 3.0, FPS)
+    hook_size, hook_y = (76, 0.075) if len(r["hook_text"].split()) >= 4 else (88, 0.09)
+    hook = kinetic(r["hook_text"].upper(), work / "k_hook.mov", W, H, hook_y, hook_size, 3.0, FPS)
     cta_start = next((st for st, _, sec, _, _ in tl if sec["part"] == "cta"), total - 3)
-    cta = kinetic(r["cta_text"].upper(), work / "k_cta.mov", W, H, 0.2, 80, total - cta_start + 0.5, FPS)
+    cta = kinetic(r["cta_text"].upper(), work / "k_cta.mov", W, H, 0.56, 76, total - cta_start + 0.5, FPS)
     out = OUT / f"reel{r['id']}.mp4"
     ff("-i", str(v), "-i", str(caps), "-i", str(hook), "-itsoffset", f"{cta_start:.2f}", "-i", str(cta), "-i", str(a),
        "-filter_complex", "[0][1]overlay[a];[a][2]overlay=eof_action=pass[b];[b][3]overlay=eof_action=pass[v]",

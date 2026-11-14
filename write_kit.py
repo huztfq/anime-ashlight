@@ -50,7 +50,12 @@ def mmss(t):
     return f"{int(t // 60)}:{int(t % 60):02d}"
 
 
-shots = [{"shot": s["id"], "start": mmss(SHOT_S * (s["id"] - 1)), "part": s["part"], "narration": s["narration"]}
+try:  # shots can be longer than 12 s since 2026-11-14 (mix.plan extends a shot so voices never overlap)
+    from mix import plan as _plan
+    STARTS = {p["id"]: p["t0"] for p in _plan()}
+except Exception:
+    STARTS = {s["id"]: SHOT_S * (s["id"] - 1) for s in STORY["shots"]}
+shots = [{"shot": s["id"], "start": mmss(STARTS[s["id"]]), "part": s["part"], "narration": s["narration"]}
          for s in STORY["shots"]]
 BRIEF = f"""You write the YouTube and social upload kit for Episode {N} of AFTER THE HUM, an original dark anime survival
 series by the channel Ashlight Stories (daily 5-minute episodes; arc: city -> collapse -> mountains -> sanctuary).
@@ -132,7 +137,7 @@ md += ["", "**Description**", "", "```", kit["description_hook"], "", kit["descr
        "New episode every day. Voices and visuals are AI-generated.", "",
        "AFTER THE HUM is an original dark anime survival series. A new 5-minute episode every day: from a normal city, "
        "through the collapse, into the mountains and the fight to build a sanctuary.", "",
-       "▶ Start from Episode 1: [link to Episode 1]", "▶ Full series playlist: [playlist link]", "", "Chapters", chap, "",
+       "▶ Start from Episode 1: https://www.youtube.com/watch?v=qEIeHPaKWKw", "▶ Full series playlist: https://www.youtube.com/playlist?list=PLKCKSRbunwMo", "", "Chapters", chap, "",
        f"Subscribe so you don't miss Episode {N + 1}" + (f": {NEXT_TITLE}." if NEXT_TITLE else "."),
        "", "Survival notes in this series are part of the story, not safety advice.", "", kit["hashtags"], "```", "",
        f"**Tags:** {', '.join(kit['tags'])}", "",

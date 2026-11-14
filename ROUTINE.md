@@ -36,7 +36,10 @@ After `write` (story.json exists for episode N):
 Audio (automatic since 2026-11-14): `voicefx.py` cleans and loudness-matches every voice clip, gives narration a warm
 soft room tail and keeps dialogue dry (cached in `audio/fx/`; `VOICEFX=0` turns it off; any failure falls back to the
 raw clip). Subtitles put narration in italics. Jun and Lio use premade ElevenLabs voices (see `voices.json`); spot-check
-one line of each in the film.
+one line of each in the film. Since the Ep3 feedback, every character uses a premade voice (only the narrator is
+designed) and no two voices may overlap: `mix.plan()` extends a shot when narration + line don't fit, and the build
+stops with "speech overlap" if two voices are < 0.25 s apart. If `audio.py` prints "sounds roomy", swap that character
+to another premade voice in `voices.json`, delete its `audio/lineNN.mp3` files and re-run.
 
 After `frames`: open 6–8 frames across the episode (`frames/sNN_1.png`). Same faces as `refs/`, no painted text,
 no extra fingers or broken faces on the main characters. Delete a bad pose PNG and re-run to redraw it.

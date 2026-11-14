@@ -2,7 +2,7 @@
 Narration (Nara's voice-over) is in <i>italics</i>; spoken lines are upright and start with the speaker's name, so
 viewers can tell the two apart (YouTube renders <i> in uploaded .srt files)."""
 import json, pathlib, sys
-from mix import dur, SHOT_S, TITLE_S
+from mix import plan
 
 STORY = json.loads(pathlib.Path("story.json").read_text())
 A = pathlib.Path("audio")
@@ -14,12 +14,10 @@ def ts(t):
 
 
 cues = []
-for s in STORY["shots"]:
-    t0 = TITLE_S + SHOT_S * (s["id"] - 1)
-    t = t0 + 0.6
-    vo = A / f"vo{s['id']:02d}.mp3"
-    if vo.exists():
-        d = dur(vo)
+for p in plan():  # same speech plan as mix.py: narration, a gap, then the line; never overlapping
+    s = next(x for x in STORY["shots"] if x["id"] == p["id"])
+    if p["vo"]:
+        _, t, end = p["vo"]; d = end - t
         words = s["narration"].split()
         half = len(words)
         if len(words) > 12:  # long lines split into two cues, at the punctuation nearest the middle
@@ -30,10 +28,8 @@ for s in STORY["shots"]:
                 a = t + d * (0 if k == 0 else half / len(words))
                 b = t + d * (half / len(words) if k == 0 else 1)
                 cues.append((a, b, f"<i>{' '.join(chunk)}</i>"))  # narration in italics, dialogue upright with a name
-        t += d + 0.4
-    line = A / f"line{s['id']:02d}.mp3"
-    if line.exists():
-        a = min(t, t0 + SHOT_S - dur(line) - 0.2)
-        cues.append((a, a + dur(line), f"{names.get(s['line']['character'], '')}: {s['line']['text']}"))
+    if p["line"]:
+        _, a, b = p["line"]
+        cues.append((a, b, f"{names.get(s['line']['character'], '')}: {s['line']['text']}"))
 pathlib.Path(sys.argv[1]).write_text("".join(f"{i}\n{ts(a)} --> {ts(b)}\n{txt}\n\n" for i, (a, b, txt) in enumerate(cues, 1)))
 print(len(cues), "cues")

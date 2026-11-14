@@ -22,7 +22,43 @@ FALLBACK = {"narrator": "pFZP5JQG7iQjIQuC4Bku", "female": "EXAVITQu4vr4xnSDxMaL"
 # had been designed with a low, male-sounding voice. ElevenLabs refuses to design voices for under-18 characters, so
 # both moved to clean, full-band premade voices in voices.json (Jun: "Jessica", young bright American female;
 # Lio: "Liam", young American male). If a voice ever fails, the line is retried with the previous voice below.
-PREVIOUS = {"jun": "CxmVLC0zdI88j2zfLOeX", "lio": "1CuQEihJU6LyGS2focVP"}
+PREVIOUS = {"jun": "CxmVLC0zdI88j2zfLOeX", "lio": "1CuQEihJU6LyGS2focVP", "soren": "Ag1rBrmqwqZYr2m4S6H2"}
+# 2026-11-14 (Ep3): the designed Soren voice had a room/reverb baked into every take (pauses sat only ~37 dB under
+# the peaks, vs ~76 dB for premade voices); viewers heard it as "an echo voice". Designed voices are now used for the
+# narrator only. Every on-screen character gets a clean premade voice from this pool (first unused one that fits the
+# character's gender/age in series.json); Soren = "Brian" (deep, calm, close-mic).
+PREMADE = {
+    "male": ["nPczCjzI2devNBz1zQrb",    # Brian: deep, calm, resonant (Soren)
+             "TX3LPaxmHKxFdv7VOQHJ",    # Liam: young, energetic (Lio)
+             "iP95p4xoKVk53GoZ742B",    # Chris: down-to-earth
+             "CwhRBWXzGAHq8TQ4Fs17",    # Roger: laid-back
+             "bIHbv24MWmeRgasZH58o",    # Will: young, relaxed
+             "pqHfZKP75CvOlQylNhV4"],   # Bill: older, crisp
+    "female": ["cgSgspJ2msm6clMCkdW9",  # Jessica: young, bright (Jun)
+               "EXAVITQu4vr4xnSDxMaL",  # Sarah
+               "XrExE9yKIg1WjnnlVkGX",  # Matilda
+               "Xb7hH8MSUJpSbSDYk0k2",  # Alice
+               "pFZP5JQG7iQjIQuC4Bku"],  # Lily
+}
+ROOM_MAX_DB = -50  # a clean close-mic clip's quiet frames sit below peak-50 dB; above that it carries room/reverb
+
+
+def room_db(path):
+    """How far the quiet 10% of a voice clip sits below its peak (dB, negative). Near -37 = roomy/echoey take."""
+    import subprocess, numpy as np
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(path), "-ac", "1", "-ar", "16000", "-f", "f32le", "-"],
+                         capture_output=True).stdout
+    x = np.frombuffer(raw, np.float32)
+    fr = x[:len(x) // 160 * 160].reshape(-1, 160)
+    db = 20 * np.log10(np.sqrt((fr ** 2).mean(1)) + 1e-9)
+    return float(np.percentile(db, 10) - db.max())
+
+
+def premade_for(c, used):
+    tags = (c.get("tags", "") + " " + c.get("voice", "")).lower()
+    gender = "female" if any(w in tags for w in ("woman", "girl", "female", "feminine")) else "male"
+    pool = PREMADE[gender]
+    return next((x for x in pool if x not in used), pool[0])
 # appended to every designed voice: without it the design model often returns lo-fi, "phone mic" audio
 QUALITY = " Perfect studio audio quality: crisp, clear, full-bandwidth close-mic recording, no background noise."
 
@@ -58,6 +94,11 @@ def voices():
     for key, name, desc, sample in speakers:
         if key in v:
             continue
+        if key != "narrator":  # characters: clean premade voice, never a designed one (see PREMADE)
+            c = next(c for c in STORY["characters"] if c["id"] == key)
+            v[key] = premade_for(c, set(v.values()))
+            VOICES_FILE.write_text(json.dumps(v, indent=2))
+            continue
         sample = (sample + " " + STORY["logline"])[:500]  # the design endpoint wants 100+ characters of sample text
         try:
             v[key] = design_voice(name, desc[:1000], sample)
@@ -88,7 +129,10 @@ def tts(voice, text, dest, what, stability=0.5, style=0.3):
 
 def line_tts(v, line, dest, what):
     """A character line; if the character's voice errors, retry once with their previous voice."""
-    res = tts(v[line["character"]], line["text"], dest, what)
+    res = tts(v[line["character"]], line["text"], dest, what, stability=0.55, style=0.15)
+    if dest.exists() and room_db(dest) > ROOM_MAX_DB:  # roomy/echoey take: say so loudly, the mix still runs
+        print(f"WARNING {what}: voice {v[line['character']]} sounds roomy ({room_db(dest):.0f} dB floor); "
+              f"switch {line['character']} to a premade voice in voices.json", flush=True)
     old = PREVIOUS.get(line["character"])
     if "ERROR" in res and old and old != v[line["character"]]:
         res = f"{res} | retry with previous voice: " + tts(old, line["text"], dest, what)

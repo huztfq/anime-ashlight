@@ -236,6 +236,24 @@ viewing, so the lessons are already written into `hooks.py` (fed to every writer
   loudness-matched); narration subtitles in italics. Reels already colour narrator vs lines.
 - **Cliffhangers are unchanged** on purpose.
 
+## Lesson: voices never overlap, character voices are premade (Ep3 feedback, 2026-11-14)
+
+The user: "male voice still feels weird, it starts when she's already speaking, and sounds like an echo voice".
+- **Overlap cause:** `mix.py` placed a line at `min(after narration, 12 s - line)`, so when narration + line didn't
+  fit a 12 s shot the line was pulled back on top of the narration. Ep3 had 11 overlapping lines (worst 3.1 s,
+  shot 21), and shot 2's 14.2 s recap ran into shot 3's narration. **Rule:** speech is strictly sequential.
+  `mix.plan()` puts narration at +0.5 s, then a 0.35 s gap, then the line, and **extends the shot** (last poses held
+  longer) when it doesn't fit. `assemble.py`, `make_srt.py` and the mix all use the same plan, and `mix.check_gaps()`
+  stops the build if two voices are closer than 0.25 s. Reels: `make_reels.py` starts a reused line 0.35 s into its
+  shot, drops a line from a narrated section, and refuses to render if two speakers are under 0.25 s apart.
+  Shots can now be longer than 12 s, so chapter times in the kit should come from `mix.plan()` (they were made
+  from 12 s steps; small drift is OK, the chapters stay in order).
+- **Echo cause:** Soren's *designed* ElevenLabs voice had a room/reverb baked into every take: the quiet 10% of each
+  clip sat only ~37 dB under the peak (premade voices: ~-70 to -77 dB). The voicefx chain is dry for dialogue, so
+  the echo came from the voice itself. **Rule:** design voices for the narrator only; every on-screen character gets
+  a premade voice (`audio.PREMADE`, chosen by gender, first unused). Soren = "Brian" (deep, calm). `audio.line_tts`
+  prints a WARNING when a line's floor is above -50 dB (`audio.room_db`), so check the log for "sounds roomy".
+
 ## Known gaps and what to watch
 
 - **`series.json` only outlines episodes 1–14.** `write_episode.py` looks up `episodes[n]` and will crash on
