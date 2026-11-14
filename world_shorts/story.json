@@ -1,0 +1,233 @@
+{
+ "title": "The Star That Blinked Back",
+ "logline": "From the world of AFTER THE HUM: the night before Meridian went quiet, 14-year-old Lio maps a new star over the western mountains that blinks every seventeen seconds, notices every emergency speaker on Calder Row clicking on the same beat, and flashes his torch at it. Seventeen seconds later it answers.",
+ "hook_text": "THIS STAR BLINKS ON A TIMER",
+ "cta_text": "STAR OR SIGNAL? COMMENT YOUR THEORY",
+ "narrator_voice": "Low, intimate and direct; restrained emotion and dry humor.",
+ "narrator_character": "nara",
+ "characters": [
+  {
+   "id": "lio",
+   "name": "Lio Calder",
+   "tags": "young boy, 14, short messy dark brown hair, round blue glasses, patched denim vest, red high-top shoes, constellation notebook",
+   "voice": "Clear, earnest and occasionally sarcastic.",
+   "bio": "Nara's resourceful teenage neighbor, who notices what frightened adults overlook.",
+   "on_screen": true
+  }
+ ],
+ "music": "Dark ambient night score: low drones, faint distant rain, a soft high glassy tone that pulses like a far-off beacon, slow building tension, a cold unresolved rise near the end. Instrumental only, no vocals.",
+ "shots": [
+  {
+   "id": 1,
+   "location": "Rooftop of a red brick apartment building on Calder Row, Meridian, at night",
+   "framing": "Medium shot, Lio seated by a rooftop water tank, his face clearly visible in the vertical center of the frame, the top fifth of the frame is empty dark sky",
+   "characters": [
+    "lio"
+   ],
+   "background": "Wet rooftop, rusty water tank, distant dark mountain ridge on the horizon with one tiny cold white point of light above it, low clouds",
+   "poses": [
+    "Lio sits with an open notebook on his knees, staring up at the sky in awe, a pencil frozen in his hand",
+    "Lio leans forward, squinting at the horizon through his round blue glasses",
+    "Lio lifts the pencil and points it toward the distant light",
+    "Lio holds still, lips parted, eyes fixed on the light"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Light rain on a rooftop, distant city hum, faint wind."
+  },
+  {
+   "id": 2,
+   "location": "Night sky above the western mountains seen from the city",
+   "framing": "Vertical shot of only the sky and mountains, no people, a black mountain ridge silhouette across the lower third, one small bright cold white light just above the ridge in the center",
+   "characters": [],
+   "background": "Heavy dark clouds, faint real stars, the single light glowing with a soft halo. No people, no figures, no buildings, no poles. Absolutely no people or faces anywhere in the image",
+   "poses": [
+    "The single light glows bright with a soft white halo",
+    "The light is dim, almost gone, just a faint point",
+    "The light flares bright again, a thin halo spreading into the clouds",
+    "The light fades to a dim point again while clouds drift"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Quiet wind, a very faint high electronic tone pulsing once."
+  },
+  {
+   "id": 3,
+   "location": "Rooftop at night",
+   "framing": "Close-up from above of an open notebook held in a boy's hands, no face in frame",
+   "characters": [],
+   "background": "The notebook pages show hand-drawn star maps: pencil dots joined by thin lines, little circles, no words, no letters, no numbers. Wet rooftop gravel below",
+   "poses": [
+    "A hand pencils a new small dot low on the page, below the other constellations",
+    "The pencil circles the new dot twice",
+    "The pencil draws a short arrow pointing to the dot",
+    "The hand rests on the page, the new dot circled"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Pencil scratching on paper, light rain."
+  },
+  {
+   "id": 4,
+   "location": "Rooftop over Calder Row, Meridian, at night",
+   "framing": "Wide vertical shot from behind and to the side, Lio small and alone near the roof edge, his profile visible",
+   "characters": [
+    "lio"
+   ],
+   "background": "Rain-dark city of Meridian below with warm window lights, an elevated rail line, red brick buildings, rooftop water tanks, the dark mountain ridge far away with a tiny light",
+   "poses": [
+    "Lio sits alone at the roof edge, notebook on his knees, looking at the far mountains",
+    "Lio hugs his knees, notebook against his chest",
+    "Lio turns his head slightly, looking over his shoulder at the dark stairwell door",
+    "Lio looks back toward the mountains"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Distant elevated train rumble, rain, city hum."
+  },
+  {
+   "id": 5,
+   "location": "Rooftop at night",
+   "framing": "Medium close-up of Lio, face centered in the middle of the frame, his raised hand beside his face",
+   "characters": [
+    "lio"
+   ],
+   "background": "Dark cloudy night sky, soft cold light on his face",
+   "poses": [
+    "Lio counts on his fingers, lips moving, eyes on the sky",
+    "Lio folds down another finger, concentrating hard",
+    "Lio has all fingers folded, holding his breath",
+    "Lio's eyes widen as a faint white light flickers across his glasses"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Quiet rain, a soft clock-like tick."
+  },
+  {
+   "id": 6,
+   "location": "Rooftop at night",
+   "framing": "Close-up of Lio's face, centered, slightly low angle",
+   "characters": [
+    "lio"
+   ],
+   "background": "Dark sky with heavy clouds",
+   "poses": [
+    "Lio frowns and pushes his round blue glasses up his nose",
+    "Lio tilts his head, skeptical, one eyebrow raised",
+    "Lio mutters to himself, unsettled",
+    "Lio stares upward, serious"
+   ],
+   "narration": "",
+   "line": {
+    "character": "lio",
+    "text": "Stars don't keep time."
+   },
+   "sfx": "Wind, light rain."
+  },
+  {
+   "id": 7,
+   "location": "Calder Row street seen from the rooftop at night",
+   "framing": "High angle looking straight down the narrow street, vertical composition",
+   "characters": [],
+   "background": "Rain-black street, red brick apartments, a glowing blue laundromat sign, elevated rail shadows, grey emergency loudspeaker horns mounted on street poles, wet reflections, no people. Absolutely no people or faces anywhere in the image",
+   "poses": [
+    "The street is still, the loudspeakers on their poles",
+    "Tiny red indicator lights blink on every loudspeaker at once",
+    "The red lights are off again, rain streaking past",
+    "The red lights blink on again all together"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Rain on the street, a sharp synchronized electrical click from many speakers."
+  },
+  {
+   "id": 8,
+   "location": "Calder Row at night",
+   "framing": "Close-up of one grey emergency loudspeaker horn on a pole, angled up toward distant mountains",
+   "characters": [],
+   "background": "Rain, red brick wall, the dark mountain ridge far behind with a faint light. Absolutely no people or faces anywhere in the image",
+   "poses": [
+    "The speaker horn points toward the far mountains, a small red light glowing",
+    "The red light switches off",
+    "The red light glows again",
+    "Rain drips off the speaker rim, red light off"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "A single electrical click, rain dripping on metal."
+  },
+  {
+   "id": 9,
+   "location": "Rooftops of Meridian at night",
+   "framing": "Vertical shot across empty rooftops, no people, perspective leading to the far mountains",
+   "characters": [],
+   "background": "Many grey emergency loudspeaker horns on rooftop masts, all turned the same direction toward the dark western mountains, each with a small red light, rain, low clouds. No people, no figures anywhere. Absolutely no people or faces anywhere in the image",
+   "poses": [
+    "All the speakers face the mountains, red lights glowing together",
+    "All the red lights are dark",
+    "All the red lights glow again in unison",
+    "The lights are dark, the faint mountain light glows on the horizon"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Many speakers clicking in unison, wind."
+  },
+  {
+   "id": 10,
+   "location": "Rooftop at night",
+   "framing": "Medium shot of Lio standing, his face clearly visible in the center of the frame",
+   "characters": [
+    "lio"
+   ],
+   "background": "Rooftop water tank, dark cloudy sky, mountains on the horizon",
+   "poses": [
+    "Lio stands and raises a small handheld flashlight toward the sky, determined",
+    "Lio clicks the flashlight on, a short white beam into the sky",
+    "The flashlight is off, Lio waits, jaw tight",
+    "Lio lowers the flashlight slightly, watching the horizon"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Three flashlight clicks, rain."
+  },
+  {
+   "id": 11,
+   "location": "Rooftop at night",
+   "framing": "Close-up of Lio's face in the center of the frame",
+   "characters": [
+    "lio"
+   ],
+   "background": "Dark sky behind him",
+   "poses": [
+    "Lio's face is lit by a sudden cold white flash from far away, eyes wide behind his glasses",
+    "The flash is gone, Lio's face in darkness, mouth open",
+    "Another cold white flash lights his face, a white point reflected in his glasses",
+    "Darkness again, Lio frozen in shock"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "A low distant tonal pulse, rain stops for a moment."
+  },
+  {
+   "id": 12,
+   "location": "Rooftop at night",
+   "framing": "Close-up of Lio, face centered, notebook clutched to his chest",
+   "characters": [
+    "lio"
+   ],
+   "background": "Dark sky, the faint distant light over the mountain ridge behind him",
+   "poses": [
+    "Lio whispers, clutching the notebook to his chest, eyes on the horizon",
+    "Lio slowly lowers the flashlight, breathing hard",
+    "Lio swallows, glancing at the notebook",
+    "Lio looks straight at the horizon, afraid but curious"
+   ],
+   "narration": "",
+   "line": {
+    "character": "lio",
+    "text": "That's not a star. It's answering."
+   },
+   "sfx": "Wind, a faint high tone fading."
+  }
+ ]
+}

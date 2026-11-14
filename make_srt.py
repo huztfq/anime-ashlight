@@ -1,6 +1,8 @@
-"""YouTube subtitles for the episode, timed the same way mix.py places the voices. Usage: make_srt.py out.srt"""
+"""YouTube subtitles for the episode, timed the same way mix.py places the voices. Usage: make_srt.py out.srt
+Narration (Nara's voice-over) is in <i>italics</i>; spoken lines are upright and start with the speaker's name, so
+viewers can tell the two apart (YouTube renders <i> in uploaded .srt files)."""
 import json, pathlib, sys
-from mix import dur, layout
+from mix import plan
 
 STORY = json.loads(pathlib.Path("story.json").read_text())
 A = pathlib.Path("audio")
@@ -12,13 +14,10 @@ def ts(t):
 
 
 cues = []
-L = layout()
-for s in STORY["shots"]:
-    x = L[s["id"]]
-    t = x["vo"]
-    vo = A / f"vo{s['id']:02d}.mp3"
-    if vo.exists():
-        d = dur(vo)
+for p in plan():  # same speech plan as mix.py: narration, a gap, then the line; never overlapping
+    s = next(x for x in STORY["shots"] if x["id"] == p["id"])
+    if p["vo"]:
+        _, t, end = p["vo"]; d = end - t
         words = s["narration"].split()
         half = len(words)
         if len(words) > 12:  # long lines split into two cues, at the punctuation nearest the middle
@@ -28,10 +27,9 @@ for s in STORY["shots"]:
             if chunk:
                 a = t + d * (0 if k == 0 else half / len(words))
                 b = t + d * (half / len(words) if k == 0 else 1)
-                cues.append((a, b, " ".join(chunk)))
-    line = A / f"line{s['id']:02d}.mp3"
-    if x["line"] is not None:
-        a = x["line"]
-        cues.append((a, a + dur(line), f"{names.get(s['line']['character'], '')}: {s['line']['text']}"))
+                cues.append((a, b, f"<i>{' '.join(chunk)}</i>"))  # narration in italics, dialogue upright with a name
+    if p["line"]:
+        _, a, b = p["line"]
+        cues.append((a, b, f"{names.get(s['line']['character'], '')}: {s['line']['text']}"))
 pathlib.Path(sys.argv[1]).write_text("".join(f"{i}\n{ts(a)} --> {ts(b)}\n{txt}\n\n" for i, (a, b, txt) in enumerate(cues, 1)))
 print(len(cues), "cues")

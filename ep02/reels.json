@@ -1,0 +1,543 @@
+{
+  "reels": [
+    {
+      "id": 1,
+      "angle": "Cliffhanger reel",
+      "hook_text": "OUR WATER MOVED BY ITSELF",
+      "cta_text": "FULL EPISODE: FIND THE FILAMENT'S SOURCE",
+      "sections": [
+        {
+          "part": "hook",
+          "vo": "Our clearest water moved toward a magnet.",
+          "shots": [
+            {
+              "shot": 25,
+              "seconds": 3.0,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "lock_in",
+          "vo": "It was our best drinking supply. The taps were already dead.",
+          "shots": [
+            {
+              "shot": 14,
+              "seconds": 2.2,
+              "use_line": false
+            },
+            {
+              "shot": 21,
+              "seconds": 2.3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body1",
+          "vo": "Nine minutes before pressure failed, we capped the first clear run. Then the next glass turned cloudy.",
+          "shots": [
+            {
+              "shot": 2,
+              "seconds": 3.0,
+              "use_line": false
+            },
+            {
+              "shot": 9,
+              "seconds": 3.5,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook1",
+          "vo": "So was the cloud the real danger?",
+          "shots": [
+            {
+              "shot": 11,
+              "seconds": 2.7,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body2",
+          "vo": "Clean cloth caught orange grit. Boiling could kill germs, but not metals or particles, so we isolated it and tested the clearest glass.",
+          "shots": [
+            {
+              "shot": 12,
+              "seconds": 4.4,
+              "use_line": false
+            },
+            {
+              "shot": 13,
+              "seconds": 4.4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook2",
+          "vo": "Then the pipes struck every seventeen seconds.",
+          "shots": [
+            {
+              "shot": 17,
+              "seconds": 2.8,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body3",
+          "vo": "Jun raised a magnet beside the sample. On the next pulse, something inside the water started to lift.",
+          "shots": [
+            {
+              "shot": 23,
+              "seconds": 3.2,
+              "use_line": false
+            },
+            {
+              "shot": 24,
+              "seconds": 3.8,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "closing",
+          "vo": "What was Calder Row pumping into us?",
+          "shots": [
+            {
+              "shot": 24,
+              "seconds": 2.8,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "cta",
+          "vo": "Watch the full five-minute episode on our channel to find the filament's source.",
+          "shots": [
+            {
+              "shot": 25,
+              "seconds": 5.0,
+              "use_line": false
+            }
+          ]
+        }
+      ],
+      "caption": "Our clearest water moved on its own. Watch the full five-minute episode to discover where the filament came from.",
+      "hashtags": [
+        "#AnimeReel",
+        "#Cliffhanger",
+        "#SurvivalMystery",
+        "#TheMorningWithoutBirds",
+        "#AnimeSeries"
+      ]
+    },
+    {
+      "id": 2,
+      "angle": "Survival reel",
+      "hook_text": "BOILING WOULDN'T FIX IT",
+      "cta_text": "WATCH THE FULL FIVE-MINUTE EPISODE ON OUR CHANNEL",
+      "sections": [
+        {
+          "part": "hook",
+          "vo": "Boiling this water would not make it safe.",
+          "shots": [
+            {
+              "shot": 13,
+              "seconds": 3.0,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "lock_in",
+          "vo": "Pressure failed in nine minutes. We needed storage, not false confidence. Here's the lower-risk method.",
+          "shots": [
+            {
+              "shot": 2,
+              "seconds": 3.0,
+              "use_line": false
+            },
+            {
+              "shot": 3,
+              "seconds": 3.2,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body1",
+          "vo": "First, use clean food-grade containers with tight lids. Put the first clear run in covered bottles. Cap it immediately and mark the time.",
+          "shots": [
+            {
+              "shot": 4,
+              "seconds": 3.0,
+              "use_line": false
+            },
+            {
+              "shot": 6,
+              "seconds": 3.0,
+              "use_line": false
+            },
+            {
+              "shot": 8,
+              "seconds": 3.0,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook1",
+          "vo": "Then our tap turned cloudy.",
+          "shots": [
+            {
+              "shot": 9,
+              "seconds": 2.2,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body2",
+          "vo": "We waited sixty seconds and checked it against the window. Clean cloth caught the visible grit, but not dissolved contaminants. Boiling kills germs, not metals or particles.",
+          "shots": [
+            {
+              "shot": 10,
+              "seconds": 3.5,
+              "use_line": false
+            },
+            {
+              "shot": 12,
+              "seconds": 3.5,
+              "use_line": false
+            },
+            {
+              "shot": 14,
+              "seconds": 3.5,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook2",
+          "vo": "But clear water can still fool you.",
+          "shots": [
+            {
+              "shot": 23,
+              "seconds": 2.8,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body3",
+          "vo": "We isolated three suspect liters and kept seven lower-risk liters separate. When the faucet died, nothing questionable had been mixed into our drinking supply.",
+          "shots": [
+            {
+              "shot": 19,
+              "seconds": 4.5,
+              "use_line": false
+            },
+            {
+              "shot": 21,
+              "seconds": 4.7,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "cta",
+          "vo": "Watch the full five-minute episode on our channel.",
+          "shots": [
+            {
+              "shot": 21,
+              "seconds": 3.2,
+              "use_line": false
+            }
+          ]
+        }
+      ],
+      "caption": "Clear, filtered, or boiled does not automatically mean proven safe. Watch the full five-minute episode for the complete storage procedure.",
+      "hashtags": [
+        "#SurvivalTips",
+        "#WaterSafety",
+        "#AnimeReel",
+        "#EmergencyPreparedness",
+        "#TheMorningWithoutBirds"
+      ]
+    },
+    {
+      "id": 3,
+      "angle": "Moral-choice reel",
+      "hook_text": "MORE WATER OR SAFER WATER?",
+      "cta_text": "WATCH THE FULL FIVE-MINUTE EPISODE ON OUR CHANNEL",
+      "sections": [
+        {
+          "part": "hook",
+          "vo": "More water, or safer water?",
+          "shots": [
+            {
+              "shot": 18,
+              "seconds": 2.4,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "lock_in",
+          "vo": "The taps had four minutes. Three people needed every bottle. One bad choice could ruin all of it.",
+          "shots": [
+            {
+              "shot": 8,
+              "seconds": 3.2,
+              "use_line": false
+            },
+            {
+              "shot": 21,
+              "seconds": 3.2,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body1",
+          "vo": "Keep filling, and we could drink whatever turned the tap cloudy. Stop now, and seven liters had to carry three people.",
+          "shots": [
+            {
+              "shot": 9,
+              "seconds": 3.5,
+              "use_line": false
+            },
+            {
+              "shot": 19,
+              "seconds": 4.2,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook1",
+          "vo": "Then the rooftop tank knocked every seventeen seconds.",
+          "shots": [
+            {
+              "shot": 15,
+              "seconds": 3.2,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body2",
+          "vo": "A cup jumped three times. The emergency speaker clicked with every jump. The water system and the warning system were keeping the same clock.",
+          "shots": [
+            {
+              "shot": 16,
+              "seconds": 4.2,
+              "use_line": false
+            },
+            {
+              "shot": 17,
+              "seconds": 4.7,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook2",
+          "vo": "That killed the fill-everything plan.",
+          "shots": [
+            {
+              "shot": 18,
+              "seconds": 2.2,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body3",
+          "vo": "",
+          "shots": [
+            {
+              "shot": 18,
+              "seconds": 2.2,
+              "use_line": true
+            }
+          ]
+        },
+        {
+          "part": "closing",
+          "vo": "I chose less. Then the taps died.",
+          "shots": [
+            {
+              "shot": 21,
+              "seconds": 2.8,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "cta",
+          "vo": "Watch the full five-minute episode on our channel.",
+          "shots": [
+            {
+              "shot": 19,
+              "seconds": 3.2,
+              "use_line": false
+            }
+          ]
+        }
+      ],
+      "caption": "Would you take more questionable water or protect a smaller supply? Watch the full five-minute episode, then tell us what you would choose.",
+      "hashtags": [
+        "#MoralChoice",
+        "#AnimeDrama",
+        "#SurvivalStory",
+        "#TheMorningWithoutBirds",
+        "#WhatWouldYouDo"
+      ]
+    },
+    {
+      "id": 4,
+      "angle": "Mystery-clue reel",
+      "hook_text": "THE PIPE KNOCKED EVERY 17 SECONDS",
+      "cta_text": "COMMENT SIGNAL FOR THE FULL EPISODE",
+      "sections": [
+        {
+          "part": "hook",
+          "vo": "The tank knocked every seventeen seconds.",
+          "shots": [
+            {
+              "shot": 17,
+              "seconds": 2.8,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "lock_in",
+          "vo": "Three times. Same gap. No birds crossed the sky. Jun said the rhythm wasn't random.",
+          "shots": [
+            {
+              "shot": 1,
+              "seconds": 2.7,
+              "use_line": false
+            },
+            {
+              "shot": 15,
+              "seconds": 2.7,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body1",
+          "vo": "We set a cup on the tank. Each knock rippled the surface, and each emergency speaker clicked on the exact same beat.",
+          "shots": [
+            {
+              "shot": 16,
+              "seconds": 4.0,
+              "use_line": false
+            },
+            {
+              "shot": 17,
+              "seconds": 4.2,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook1",
+          "vo": "I'd heard that interval before.",
+          "shots": [
+            {
+              "shot": 1,
+              "seconds": 2.2,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body2",
+          "vo": "At the end of Mom's warning in episode one, a relay clicked through the static at the same pace. We blamed her old recorder.",
+          "shots": [
+            {
+              "shot": 1,
+              "seconds": 4.6,
+              "use_line": false
+            },
+            {
+              "shot": 22,
+              "seconds": 4.6,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "rehook2",
+          "vo": "But the pipes weren't copying the speakers.",
+          "shots": [
+            {
+              "shot": 17,
+              "seconds": 2.8,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "body3",
+          "vo": "They were answering together. Then a copper filament in our clearest glass bent toward Jun's magnet on the next seventeen-second pulse.",
+          "shots": [
+            {
+              "shot": 24,
+              "seconds": 3.8,
+              "use_line": false
+            },
+            {
+              "shot": 25,
+              "seconds": 4.3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "closing",
+          "vo": "Did the birds flee poisoned water\u2014or a signal traveling through it?",
+          "shots": [
+            {
+              "shot": 22,
+              "seconds": 2.5,
+              "use_line": false
+            },
+            {
+              "shot": 1,
+              "seconds": 2.3,
+              "use_line": false
+            }
+          ]
+        },
+        {
+          "part": "cta",
+          "vo": "Comment SIGNAL for the full five-minute episode.",
+          "shots": [
+            {
+              "shot": 17,
+              "seconds": 3.0,
+              "use_line": false
+            }
+          ]
+        }
+      ],
+      "caption": "The pipes, speakers, and missing birds may share one signal. Comment SIGNAL for the full five-minute episode.",
+      "hashtags": [
+        "#AnimeMystery",
+        "#HiddenClues",
+        "#MysteryTheory",
+        "#TheMorningWithoutBirds",
+        "#AnimeReel"
+      ]
+    }
+  ]
+}

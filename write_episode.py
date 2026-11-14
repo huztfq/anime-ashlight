@@ -46,6 +46,53 @@ MUSIC_STYLE = ("Five-minute dark ambient survival score: deep low drones, distan
                "melody, slow heavy tension that sits quietly under narration.")
 KNOWN = {c["id"]: c for c in PREV["characters"]} if PREV else {}
 
+
+def world_state(n):
+    """How far the collapse has gone at episode n, from the bible's week/month arcs (for the premise recap)."""
+    import re
+    def within(rng):
+        a, _, b = str(rng).partition("-")
+        return a.strip().isdigit() and int(a) <= n <= int((b or a).strip())
+    week = next((w for w in SERIES.get("weeks", []) if within(w.get("episodes", ""))), None)
+    month = next((m for m in SERIES.get("months", []) if within(m.get("episodes", ""))), None)
+    fall = None  # the episode where Quietfall (the real collapse) happens, read from the turning points
+    for m in SERIES.get("months", []):
+        for tp in m.get("turning_points", []):
+            hit = re.match(r"Episode (\d+):.*Quietfall", tp)
+            if hit and fall is None:
+                fall = int(hit.group(1))
+    out = []
+    if month:
+        out.append(f"Month arc '{month.get('name')}': {month.get('summary')}")
+    if week:
+        out.append(f"This week's arc: {week.get('arc')}")
+    if fall and n < fall:
+        out.append(f"Quietfall (the full collapse) has NOT happened yet; it comes in Episode {fall}. Right now the city "
+                   "still stands but is visibly failing since the Hum. Do not say the world has ended.")
+    elif fall:
+        out.append(f"Quietfall struck in Episode {fall}: power, water and order in Meridian have collapsed. Say so plainly.")
+    return "\n".join(out)
+
+
+try:  # never let the recap context break the script writer
+    WORLD_STATE = world_state(N)
+except Exception:
+    WORLD_STATE = ""
+PREMISE = f"""PREMISE CLARITY (viewers told us they could not tell what is happening, e.g. "has the world ended or are they
+just homeless?"). Every episode must make the situation obvious to a first-time viewer:
+- Shot 1 stays the triple hook exactly as the rules above say.
+- Shot 2 (0:12-0:24) is a short narrated cold-open recap in Nara's voice, with NO character line in shot 2 and 16-24
+  words of narration. In plain words it says (a) what the Hum is (the three-second tone that came out of every phone
+  and speaker in Meridian at 7:17), (b) what has happened to the city since then, truthful to this point in the series
+  (see WORLD STATE below), and (c) where Nara and the others are right now and what they need today. Write it fresh
+  every episode: new wording and a new angle, never a copy of an earlier recap. Keep it tense, not a lecture. Shot 2's
+  image is a clear establishing view of where they are now. Shot 3 then carries the lock-in stakes.
+- Keep the world-state clear in the rest of the episode too: at least two more moments (narration or dialogue) show
+  concretely what still works, what has failed, and why the characters are where they are. Never leave it ambiguous.
+WORLD STATE AT EPISODE {N}:
+{WORLD_STATE or "Follow the bible's world section and the previous episode."}
+"""
+
 BRIEF = f"""Write the production script for Episode {N} of the anime series "{SERIES['title']}".
 
 SERIES BIBLE (JSON):
@@ -60,12 +107,15 @@ THIS EPISODE: {json.dumps(EP)}
 
 {RULES}
 
+{PREMISE}
 PRODUCTION RULES:
 - Exactly 25 shots, 12 seconds each (5:00), following the series episode format (hook, lock-in, body 1, rehook ~1:40,
-  body 2, rehook ~3:20, body 3, cliffhanger + CTA). Give every shot a "part".
+  body 2, rehook ~3:20, body 3, cliffhanger + CTA), except that shot 2 is the premise recap above (part "recap").
+  Give every shot a "part".
 - The narrator is Nara, first person, past tense. Max 22 words of narration per shot (it must fit in 12 seconds next to
-  any character line). Optional one short character line per shot, max 10 words. Narration and line together max
-  26 words per shot: they play one after the other, never over each other, and must fit in the 12 seconds. Voices off screen (a tape, a radio) are
+  any character line); only the shot 2 recap may use up to 24 because it has no line. Optional one short character
+  line per shot, max 10 words. Narration and line together max 26 words per shot: they play one after the other,
+  never over each other, and must fit in the 12 seconds. Voices off screen (a tape, a radio) are
   fine as lines.
 - Images are AI stills: each shot has 4 "poses" = the same camera framing and background, only the characters'
   pose/expression changes. At most 3 named characters on screen. Describe framing, background and poses in plain,
@@ -99,6 +149,10 @@ if r.status_code >= 400:
 text = next(c["text"] for o in j["output"] if o["type"] == "message" for c in o["content"] if c["type"] == "output_text")
 story = json.loads(text)
 assert len(story["shots"]) == 25, len(story["shots"])
+if story["shots"][1].get("line"):  # shot 2 is the narrated recap: keep it free of dialogue so the VO fits 12 s
+    story["shots"][1]["line"] = None
+if len((story["shots"][1].get("narration") or "").split()) > 28:
+    print("WARNING: shot 2 recap is over 28 words; check it fits 12 s", flush=True)
 story["episode"] = N
 story["narrator_voice"] = NARRATOR_VOICE
 story["music"] = f"{MUSIC_STYLE} {story['music']}"

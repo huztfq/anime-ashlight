@@ -1,0 +1,169 @@
+{
+ "reels": [
+  {
+   "id": 1,
+   "angle": "World short",
+   "hook_text": "THIS STAR BLINKS ON A TIMER",
+   "cta_text": "STAR OR SIGNAL? COMMENT YOUR THEORY",
+   "sections": [
+    {
+     "part": "hook",
+     "vo": "From the world of After the Hum.",
+     "shots": [
+      {
+       "shot": 1,
+       "seconds": 2.2,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "hook2",
+     "vo": "This star blinks on a timer.",
+     "shots": [
+      {
+       "shot": 2,
+       "seconds": 1.8,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "lock_in",
+     "vo": "Lio's fourteen. He maps the sky, because stars are predictable. This one wasn't.",
+     "shots": [
+      {
+       "shot": 3,
+       "seconds": 2.9,
+       "use_line": false
+      },
+      {
+       "shot": 4,
+       "seconds": 2.9,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body1",
+     "vo": "He counted. Fifteen, sixteen, seventeen... blink.",
+     "shots": [
+      {
+       "shot": 5,
+       "seconds": 2.3,
+       "use_line": false
+      },
+      {
+       "shot": 2,
+       "seconds": 2.3,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body1b",
+     "vo": "",
+     "shots": [
+      {
+       "shot": 6,
+       "seconds": 2,
+       "use_line": true
+      }
+     ]
+    },
+    {
+     "part": "rehook1",
+     "vo": "Then the street started counting too.",
+     "shots": [
+      {
+       "shot": 7,
+       "seconds": 1.6,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body2",
+     "vo": "Every emergency speaker clicked on the beat. All of them turned toward that star.",
+     "shots": [
+      {
+       "shot": 8,
+       "seconds": 2.8,
+       "use_line": false
+      },
+      {
+       "shot": 9,
+       "seconds": 2.8,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "rehook2",
+     "vo": "So Lio flashed his torch. Three times.",
+     "shots": [
+      {
+       "shot": 10,
+       "seconds": 2.8,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body3",
+     "vo": "Seventeen seconds later, it answered. Three blinks, not one.",
+     "shots": [
+      {
+       "shot": 11,
+       "seconds": 2,
+       "use_line": false
+      },
+      {
+       "shot": 2,
+       "seconds": 1.8,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body3b",
+     "vo": "",
+     "shots": [
+      {
+       "shot": 12,
+       "seconds": 2.6,
+       "use_line": true
+      }
+     ]
+    },
+    {
+     "part": "closing",
+     "vo": "That was the night before the city went quiet.",
+     "shots": [
+      {
+       "shot": 4,
+       "seconds": 1.6,
+       "use_line": false
+      },
+      {
+       "shot": 9,
+       "seconds": 1.6,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "cta",
+     "vo": "Star, or signal? Comment your theory.",
+     "shots": [
+      {
+       "shot": 2,
+       "seconds": 2.8,
+       "use_line": false
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

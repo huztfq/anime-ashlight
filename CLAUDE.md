@@ -7,6 +7,11 @@ YouTube Shorts. Planned run: 180 episodes, city → collapse → mountains → s
 - Images: Qwen-Image 3.0 Pro (DashScope API), dark gritty seinen style matched to `style_ref/dark_gritty_qwen.png`.
 - Writing: OpenAI `gpt-5.6-sol`, reasoning effort high.
 - Audio: ElevenLabs. Narrator = V1 "husky" (voice id in `voices.json` → `narrator`), score style = M1 dark ambient.
+  Jun = premade "Jessica", Lio = premade "Liam" (2026-11-14, clearer voices), Soren = a redesigned dry voice (Ep3:
+  the first design was echoey). New characters get premade voices (`audio.PREMADE`); only the narrator is designed.
+  Voices pass through `voicefx.py`. Two voices never overlap: `mix.plan()` sequences narration -> 0.35 s -> line and
+  extends a shot if needed; the build fails if any two voices are < 0.25 s apart (see HANDOFF.md "Lesson").
+- Every episode: shot 2 is a narrated premise recap (`write_episode.py`); cliffhangers stay as they are.
 - Channel: Ashlight Stories, suggested handle @ashlightanime (not confirmed). Logo not picked yet (`brand/logo2_*`).
 - Local LoRA fallback (Animagine + kohya in `~/lora/sd-scripts`) is postponed; the user installs the trainer venv.
 - Keys live in `.env` (chmod 600). Never print them.
@@ -51,3 +56,9 @@ Don't use `pgrep -f` with a pattern that also matches the waiting shell's own co
   each rehook and the CTA (`sfx_kit.py` once, used by `mix.py` and `make_reels.py`). Kit is ElevenLabs-made, so no
   licence checks; if outside sounds are ever used (e.g. Openverse), check each licence.
 - Reels always carry burned-in captions: narrator word by word (yellow active word), character lines in blue.
+
+## Reference reels (required)
+Before writing or reviewing any reel, read REFERENCE_REELS.md and apply its rules and scoring in the three-way review.
+
+## World shorts
+Standalone "From the world of AFTER THE HUM" shorts (YouTube Shorts + Instagram Reels) follow WORLD_SHORTS.md.

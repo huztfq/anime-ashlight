@@ -26,8 +26,20 @@ After `write` (story.json exists for episode N):
 - Hook rules from `hooks.py`: shot 1 hook is spoken + visual + on-screen at once (max 6 words); rehooks around shot
   9 and 17; CTA on the last shot; every body block has a new reveal, contrast, urgency and a concrete proof.
 - No pose asks for text, captions or titles to be painted into the image. Remove any that do.
+- Premise recap (since 2026-11-14, viewer feedback): shot 2 is a fresh 16-24-word narrated recap with no character
+  line: what the Hum is, how far the city has fallen at this point (before Episode 8 it is failing, not ended; from
+  Episode 8 Quietfall has collapsed it) and where the characters are now. At least two later moments keep the world
+  state clear. Cliffhanger endings stay exactly as before (the user asked to keep them).
 - No gore, corpses or weapons (see the story's `negative`). If the script fails these, fix story.json by hand
   (keep 25 shots, 4 poses each) or delete it and re-run (it rewrites).
+
+Audio (automatic since 2026-11-14): `voicefx.py` cleans and loudness-matches every voice clip, gives narration a warm
+soft room tail and keeps dialogue dry (cached in `audio/fx/`; `VOICEFX=0` turns it off; any failure falls back to the
+raw clip). Subtitles put narration in italics. Jun and Lio use premade ElevenLabs voices (see `voices.json`); spot-check
+one line of each in the film. Since the Ep3 feedback, every character uses a premade voice (only the narrator is
+designed) and no two voices may overlap: `mix.plan()` extends a shot when narration + line don't fit, and the build
+stops with "speech overlap" if two voices are < 0.25 s apart. If `audio.py` prints "sounds roomy", swap that character
+to another premade voice in `voices.json`, delete its `audio/lineNN.mp3` files and re-run.
 
 After `frames`: open 6–8 frames across the episode (`frames/sNN_1.png`). Same faces as `refs/`, no painted text,
 no extra fingers or broken faces on the main characters. Delete a bad pose PNG and re-run to redraw it.
@@ -36,8 +48,8 @@ After it finishes (the CHECKS list at the end):
 - Thumbnail: open it. The words must not cover a face and must read at phone size. If they do cover a face, re-run
   `python3 make_thumb.py N <other shot> "<text>" [pose]` and update `thumbnail_shot`/`thumbnail_text` in kit.json.
 - Reel covers: open all 4; hook text readable, faces visible.
-- Film: `ffprobe` duration about 5:10 (a shot runs past 12 s when its narration and line need it, so voices never
-  overlap; over 5:40 means the script is too wordy). Spot-check 0:01 (hook text), the rehooks at shots 9 and 17, the end (CTA).
+- Film: `ffprobe` duration about 5:10-5:45 (a shot runs past 12 s when its narration and line need it, so voices never
+  overlap; over 6:00 means the script is too wordy). Spot-check 0:01 (hook text), the rehooks at shots 9 and 17, the end (CTA).
 - Reels: 4 files, each 30–70 s, captions burned in.
 - Kit (`upload/epNN_upload_kit.md`): 3 titles with "AFTER THE HUM", chapters starting 0:00, reel captions present.
 - Drive folder and Notion page links open and list everything.

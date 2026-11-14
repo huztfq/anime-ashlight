@@ -223,13 +223,42 @@ viewing, so the lessons are already written into `hooks.py` (fed to every writer
 - **Never** paint captions or titles into the generated images; all text is added in editing. **No** gore, corpses,
   weapons or zombies.
 
+## Changes from viewer feedback (2026-11-14)
+
+- **Premise recap:** `write_episode.py` makes shot 2 a fresh narrated recap (what the Hum is, how far the city has
+  fallen, where the characters are now) and keeps the world state clear in the episode. The YouTube description in the
+  kit has a "The story so far" line plus "New episode every day. Voices and visuals are AI-generated." Don't add a
+  season length or episode count (the user said no).
+- **Voices:** Jun (a 17-year-old girl in the bible) had a low, lo-fi designed voice and Lio's was band-limited, which
+  viewers heard as "a bad mic". Both now use premade ElevenLabs voices (Jessica, Liam); `audio.py` retries a line
+  with the previous voice if one fails. ElevenLabs refuses to design under-18 voices, so pick premade voices for teens.
+- **Narration vs dialogue:** `voicefx.py` (narration warm with a soft room tail, dialogue dry and present, all clips
+  loudness-matched); narration subtitles in italics. Reels already colour narrator vs lines.
+- **Cliffhangers are unchanged** on purpose.
+
+## Lesson: voices never overlap, character voices are premade (Ep3 feedback, 2026-11-14)
+
+The user: "male voice still feels weird, it starts when she's already speaking, and sounds like an echo voice".
+- **Overlap cause:** `mix.py` placed a line at `min(after narration, 12 s - line)`, so when narration + line didn't
+  fit a 12 s shot the line was pulled back on top of the narration. Ep3 had 11 overlapping lines (worst 3.1 s,
+  shot 21), and shot 2's 14.2 s recap ran into shot 3's narration. **Rule:** speech is strictly sequential.
+  `mix.plan()` puts narration at +0.5 s, then a 0.35 s gap, then the line, and **extends the shot** (last poses held
+  longer) when it doesn't fit. `assemble.py`, `make_srt.py` and the mix all use the same plan, and `mix.check_gaps()`
+  stops the build if two voices are closer than 0.25 s. Reels: `make_reels.py` starts a reused line 0.35 s into its
+  shot, drops a line from a narrated section, and refuses to render if two speakers are under 0.25 s apart.
+  Shots can now be longer than 12 s, so chapter times in the kit should come from `mix.plan()` (they were made
+  from 12 s steps; small drift is OK, the chapters stay in order).
+- **Echo cause:** Soren's *designed* ElevenLabs voice had a room/reverb baked into every take: the quiet 10% of each
+  clip sat only ~37 dB under the peak (premade voices: ~-70 to -77 dB). The voicefx chain is dry for dialogue, so
+  the echo came from the voice itself. **Rule:** design voices for the narrator only; every on-screen character gets
+  a premade voice (`audio.PREMADE`, chosen by gender, first unused). Soren kept a redesigned voice that measures dry (-80 dB),
+  because the fixed Ep3 uses it ("Brian" is the fallback). `audio.line_tts` prints a WARNING when a line's floor is above -48 dB (`audio.room_db`), so check the log for "sounds roomy".
+
 ## Known gaps and what to watch
 
-- **`series.json` only outlines episodes 1–14.** `write_episode.py` looks up `episodes[n]` and will crash on
-  Episode 15 (around 2026-11-25). Before then, extend the outlines with OpenAI from the `weeks` / `months` arcs in
-  the same file. `plan_series.py` is the original bible writer; keep the existing 14 episodes unchanged. Then put
-  the updated `series.json` in Drive `_state` and teach `run_day.py` to prefer it, or ask the user to commit it to
-  the repo.
+- **`series.json` only outlines episodes 1–14.** From Episode 15 `write_episode.py` briefs the writer from the
+  `weeks` / `months` arcs instead (`arc_outline`), so it no longer crashes; the titles and loglines are invented
+  each day. Proper outlines (`plan_series.py`) would still give tighter plotting.
 - **Reels run 53–70 s,** against a 30–50 s target the user liked. It's acceptable but could be tightened in
   `plan_reels.py`.
 - **The thumbnail auto-pick can put the text over a face.** ROUTINE.md tells you to check visually and re-run
