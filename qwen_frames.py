@@ -1,7 +1,7 @@
 """Film frames with Qwen-Image 3.0 Pro (dark gritty anime look).
 
 character sheets:  qwen_frames.py refs
-shot frames:       qwen_frames.py shots 1-15      (VERTICAL=1 for 9:16 reel frames)
+shot frames:       qwen_frames.py shots 1-15      (VERTICAL=1 for 9:16 reel frames; "9:3" = shot 9, poses 1-3 only)
 Pose 1 of each shot is drawn with the on-screen characters' sheets as references; poses 2-4 are edits of pose 1
 (same framing, background and light), so only the characters move. Frames are saved at 1920x1080 / 1080x1920."""
 import base64, json, os, pathlib, re, sys, time
@@ -81,7 +81,7 @@ def overlay_text(s):
     return f' The {m.group(1)} shows the handwritten words "{m.group(2)}".' if m else ""
 
 
-def shot(s):
+def shot(s, n_poses=4):
     cids = [c for c in s["characters"] if c in CHARS]
     who = " ".join(f"{CHARS[c]['name']} ({CHARS[c]['tags']})." for c in cids)
     refnote = ("Use the reference image(s) only for each character's face, hair and clothes; do not copy their pose "
@@ -104,15 +104,16 @@ def shot(s):
             call([first], text, SIZE, out, f"{FRAMES.name}_s{s['id']}_{i+1}")
             fit(out, OUT_WH)
     with ThreadPoolExecutor(max_workers=3) as ex:
-        list(ex.map(pose, range(1, len(s["poses"]))))
+        list(ex.map(pose, range(1, min(n_poses, len(s["poses"])))))
     return f"shot {s['id']}: done"
 
 
 def shots(ids):
+    """ids: {shot id: how many poses to draw}."""
     FRAMES.mkdir(exist_ok=True)
     todo = [s for s in STORY["shots"] if s["id"] in ids]
     with ThreadPoolExecutor(max_workers=2) as ex:
-        for res in ex.map(shot, todo):
+        for res in ex.map(lambda s: shot(s, ids[s["id"]]), todo):
             print(res, flush=True)
 
 
@@ -120,8 +121,9 @@ if __name__ == "__main__":
     if sys.argv[1] == "refs":
         refs()
     else:
-        ids = set()
-        for part in sys.argv[2].split(","):
+        ids = {}
+        for part in filter(None, sys.argv[2].split(",")):
+            part, _, n = part.partition(":")
             a, _, b = part.partition("-")
-            ids.update(range(int(a), int(b or a) + 1))
+            ids.update({i: int(n or 4) for i in range(int(a), int(b or a) + 1)})
         shots(ids)

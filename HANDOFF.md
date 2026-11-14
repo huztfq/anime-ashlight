@@ -51,7 +51,7 @@ and confirm it finishes.
 4. **Prompt:**
    `Read CLAUDE.md, HANDOFF.md and ROUTINE.md, then make today's episode by following ROUTINE.md exactly. Do not git push.`
 5. **Test:** use Run now and watch it.
-   - A day takes 1–2 hours, mostly about 190 Qwen images at ~2 parallel calls.
+   - A day takes 1–2 hours, mostly about 110 Qwen images at ~2 parallel calls.
    - Claude's docs list no total time limit for routines. Each command is capped at about 10 minutes in the
      foreground, so `run_day.py` runs in the background with `nohup` and is resumable.
    - If the session ends early, the next run continues from where it stopped (steps skip finished work).
@@ -263,7 +263,7 @@ The user: "male voice still feels weird, it starts when she's already speaking, 
   `plan_reels.py`.
 - **The thumbnail auto-pick can put the text over a face.** ROUTINE.md tells you to check visually and re-run
   `make_thumb.py` with another shot or pose.
-- **Cost:** about $8 a day for images, plus OpenAI and ElevenLabs. `costs.jsonl` logs each call.
+- **Cost:** about $4.70 a day for images (~110; vertical frames only for each reel's opening shots), plus OpenAI and ElevenLabs. `costs.jsonl` logs each call.
 - **Still waiting on the user:** the logo choice (drafts under `brand/`, not in the repo), handle confirmation, and
   the playlist and Episode 1 links for the descriptions (placeholders say `[link to Episode 1]`).
 - **Not in scope:** posting to YouTube, Instagram or TikTok. The user does that by hand from the Notion checklist.

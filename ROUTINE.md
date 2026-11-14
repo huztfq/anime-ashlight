@@ -13,7 +13,7 @@ cd anime   # if the repo root is not already this folder
 nohup python3 run_day.py > run_day.out 2>&1 &
 ```
 
-It is resumable and takes 1–2 hours (about 190 Qwen images at ~2 at a time). Check progress with
+It is resumable and takes 1–2 hours (about 110 Qwen images at ~2 at a time). Check progress with
 `tail -5 run_day.log` every few minutes; don't sleep-loop on it. If it stops with `FAILED`, read the end of
 `run_day.log`, fix the cause, and start it again: finished steps are skipped. Retry a failing step at most 3 times.
 `--until write` stops after the script so you can review it first.

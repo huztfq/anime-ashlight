@@ -28,7 +28,8 @@ The steps it runs (by hand: from this folder with `.venv/bin/python`):
    Check no pose asks for a caption or title painted into the image; strip it if it does.
 3. In parallel: `qwen_frames.py refs` (only new characters), `qwen_frames.py shots 1-25`, `audio.py`, `plan_reels.py`.
 4. `reel_audio.py`, then `VERTICAL=1 qwen_frames.py shots $(make_reels.py shots)` once the wide frames are done
-   (Qwen rate-limits at ~2 parallel calls; 429s retry on their own). About 190 images, roughly $8 an episode.
+   (Qwen rate-limits at ~2 parallel calls; 429s retry on their own). Only each reel's opening shots get 9:16 frames,
+   and only the poses shown; other reel shots use the wide frame over a blur. About 110 images, roughly $4.70 an episode.
 5. `assemble.py epNN_title.mp4`, `make_srt.py upload/epNN_subtitles_en.srt`, `make_reels.py`.
 6. Thumbnail 1280x720: the strongest frame, a 2-3 word line in Arial Rounded Bold with the last word ember orange,
    "AFTER THE HUM | EP N" small. Phone copy under 30 MB (1280x720, ~520 kbps) for SendUserFile.

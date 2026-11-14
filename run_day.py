@@ -130,8 +130,10 @@ def main():
     # --- reels: narrator audio with word timings, then the vertical frames the reels use
     if not (HERE / "reels_audio").exists() or len(list((HERE / "reels_audio").glob("*.json"))) == 0:
         run(PY, "reel_audio.py")
+    # only each reel's opening shots get true 9:16 frames, and only the poses shown; the rest reuse the wide frames
     shots = subprocess.check_output([PY, "make_reels.py", "shots"], text=True).strip()
-    run(PY, "qwen_frames.py", "shots", shots, env={"VERTICAL": "1"})
+    if shots:
+        run(PY, "qwen_frames.py", "shots", shots, env={"VERTICAL": "1"})
     if until == "reels_plan":
         return
 

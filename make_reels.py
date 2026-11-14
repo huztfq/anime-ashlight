@@ -240,12 +240,27 @@ def build(r):
 
 
 def shots_needed():
-    return sorted({sh["shot"] for r in REELS for sec in r["sections"] for sh in sec["shots"]})
+    """{shot: poses} of the 9:16 frames worth drawing with Qwen. Only the shots in each reel's opening section get
+    true vertical frames (that is where viewers decide to keep watching), and only as many poses as the reels show
+    (~1.3 s per drawing, the same rule as video()). Every other reel shot uses its wide frame over a blurred copy
+    (pose_clip). About 12 vertical images an episode instead of ~90."""
+    tls = {r["id"]: timeline(r)[0] for r in REELS}  # timeline() needs reels_audio for real lengths
+    opening = {shot for tl in tls.values() if tl for shot, _, _, _ in tl[0][3]}
+    need = {}
+    for tl in tls.values():  # a shot reused later in a reel shows its vertical poses there too
+        for _, _, _, segs, _ in tl:
+            for shot, _, l, _ in segs:
+                if shot in opening:
+                    need[shot] = max(need.get(shot, 1), min(4, round(l / 1.3)))
+    return dict(sorted(need.items()))
 
 
 if __name__ == "__main__":
-    if sys.argv[1:] == ["shots"]:
-        print(",".join(map(str, shots_needed())))
+    if sys.argv[1:] == ["shots"]:  # "9:3,11:2" = shot 9 poses 1-3, shot 11 poses 1-2 (for qwen_frames.py)
+        import contextlib
+        with contextlib.redirect_stdout(sys.stderr):  # keep timeline() notes out of the list
+            need = shots_needed()
+        print(",".join(f"{k}:{n}" for k, n in need.items()))
     else:
         ids = set(map(int, sys.argv[1:])) or {r["id"] for r in REELS}
         for r in REELS:
