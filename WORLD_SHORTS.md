@@ -51,3 +51,13 @@ Same anime style, same pipeline, same voices. Read REFERENCE_REELS.md first; eve
    "Voices and visuals are AI-generated.", #AfterTheHum + up to 4 trending tags. Shorts title under 70 characters
    with "AFTER THE HUM". Save `/workspace/ashlight/world_shorts/wsNN.mp4` + `wsNN_caption.md`.
 8. Posting: AI label on every platform; Shorts "Related video" = latest episode.
+
+## Lessons from ws02 (2026-11-14; scripts in `world_shorts/ws02/`)
+- While `run_day.py` runs, Qwen belongs to the episode: draw world-short frames one call at a time (`ws_frames_seq.py`).
+- Recurring props (phone tray, wall of screens, watch, clock) are drawn once by Qwen and switched on/off in code
+  (`ws_screens.py`) so they never move between poses; on-screen numbers are drawn in code, not left to Qwen.
+- `ws_lift.py`: per-frame gamma lift to mean luma ~44 (unlifted copies in `raw/`), so night frames read on a phone.
+- If Qwen puts the opening face under the hook card (y 0.2), shift that shot down (`ws_shift.py`).
+- `ws_build.py`: captions on a dark box, groups close at sentence ends and commas, character lines in 4-word groups,
+  and no low caption while the spoken hook repeats the hook card.
+- Name the character and what they do in the first narrated line; keep times consistent (the reviewers catch it).

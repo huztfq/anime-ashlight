@@ -1,0 +1,169 @@
+{
+ "reels": [
+  {
+   "id": 1,
+   "angle": "World short",
+   "hook_text": "THESE PHONES HAVE NO BATTERIES",
+   "cta_text": "GLITCH OR WARNING? COMMENT YOUR THEORY",
+   "sections": [
+    {
+     "part": "hook",
+     "vo": "From the world of After the Hum.",
+     "shots": [
+      {
+       "shot": 1,
+       "seconds": 2.2,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "hook2",
+     "vo": "These phones have no batteries.",
+     "shots": [
+      {
+       "shot": 2,
+       "seconds": 1.8,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "lock_in",
+     "vo": "Jun Arai is seventeen. She fixes phones in a tiny kiosk. Every night, she pulls every battery.",
+     "shots": [
+      {
+       "shot": 3,
+       "seconds": 3.0,
+       "use_line": false
+      },
+      {
+       "shot": 4,
+       "seconds": 3.0,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body1",
+     "vo": "That night, every dead screen lit up. Same time on all of them. Seven seventeen.",
+     "shots": [
+      {
+       "shot": 1,
+       "seconds": 2.4,
+       "use_line": false
+      },
+      {
+       "shot": 2,
+       "seconds": 2.4,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body1b",
+     "vo": "",
+     "shots": [
+      {
+       "shot": 6,
+       "seconds": 2.2,
+       "use_line": true
+      }
+     ]
+    },
+    {
+     "part": "rehook1",
+     "vo": "Then she touched one. It was warm.",
+     "shots": [
+      {
+       "shot": 7,
+       "seconds": 2.2,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body2",
+     "vo": "Every seventeen seconds, they flashed again. Then the whole wall joined in.",
+     "shots": [
+      {
+       "shot": 2,
+       "seconds": 1.8,
+       "use_line": false
+      },
+      {
+       "shot": 9,
+       "seconds": 2.6,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "rehook2",
+     "vo": "Her watch said eleven forty. The phones weren't showing the time.",
+     "shots": [
+      {
+       "shot": 5,
+       "seconds": 2.2,
+       "use_line": false
+      },
+      {
+       "shot": 9,
+       "seconds": 1.6,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body3",
+     "vo": "They were showing when.",
+     "shots": [
+      {
+       "shot": 10,
+       "seconds": 1.8,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "body3b",
+     "vo": "",
+     "shots": [
+      {
+       "shot": 8,
+       "seconds": 2.4,
+       "use_line": true
+      }
+     ]
+    },
+    {
+     "part": "closing",
+     "vo": "The next morning, at exactly seven seventeen, every phone in Meridian screamed.",
+     "shots": [
+      {
+       "shot": 11,
+       "seconds": 3.0,
+       "use_line": false
+      },
+      {
+       "shot": 12,
+       "seconds": 2.2,
+       "use_line": false
+      }
+     ]
+    },
+    {
+     "part": "cta",
+     "vo": "Glitch, or warning? Comment your theory.",
+     "shots": [
+      {
+       "shot": 2,
+       "seconds": 2.8,
+       "use_line": false
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

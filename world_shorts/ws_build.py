@@ -29,15 +29,16 @@ def timeline(r):
     return out, t
 
 
-def chunks(words):
-    """Caption groups of up to 3 words that never run across a sentence end (4 if that completes it) (".", "?", "!")."""
+def chunks(words, n=3):
+    """Caption groups of up to n words that never run across a sentence end (n+1 if that completes it) (".", "?", "!");
+    a comma also closes a group once it has 2+ words (ws02 review: no 'KIOSK, AND SHE')."""
     def ends(w):
         return w[0].rstrip('"\u201d').endswith((".", "?", "!"))
     out, cur = [], []
     for k, w in enumerate(words):
         cur.append(w)
         nxt = words[k + 1] if k + 1 < len(words) else None
-        if ends(w) or (len(cur) >= 3 and not (len(cur) == 3 and nxt and ends(nxt))):  # a 4th word may finish a sentence
+        if ends(w) or (w[0].endswith(",") and len(cur) >= 2) or (len(cur) >= n and not (len(cur) == n and nxt and ends(nxt))):  # one more word may finish a sentence
             out.append(cur); cur = []
     return out + [cur] if cur else out
 
@@ -56,7 +57,7 @@ def captions(tl, total, work):
             text = " ".join(w for w, _, _ in group).upper()
             for j, (_, ws, we) in enumerate(group):
                 end = group[j + 1][1] if j + 1 < len(group) else we + 0.15
-                png = banner(text, 92, work / f"cap{n:04d}.png", W, H, 0.7, highlight=j); n += 1
+                png = banner(text, 92, work / f"cap{n:04d}.png", W, H, 0.7, box=True, highlight=j); n += 1
                 events.append((st + ws, st + end, png))
     for _, _, _, segs, _ in tl:
         for shot, s0, _, use_line in segs:
@@ -66,8 +67,8 @@ def captions(tl, total, work):
             words = next(x["line"]["text"] for x in M.STORY["shots"] if x["id"] == shot).upper().split()
             per = M.dur(line) / max(1, len(words))
             k = 0
-            for g in chunks([(w, 0, 0) for w in words]):
-                png = banner(" ".join(w for w, _, _ in g), 92, work / f"cap{n:04d}.png", W, H, 0.7, fill="#9FD8FF"); n += 1
+            for g in chunks([(w, 0, 0) for w in words], 4):
+                png = banner(" ".join(w for w, _, _ in g), 92, work / f"cap{n:04d}.png", W, H, 0.7, fill="#9FD8FF", box=True); n += 1
                 events.append((s0 + 0.2 + k * per, s0 + 0.2 + (k + len(g)) * per, png)); k += len(g)
     events.sort(key=lambda e: e[0])
     lines, t = [], 0.0
@@ -88,7 +89,9 @@ def build(r, out):
     work = M.OUT / f"work{r['id']}"; work.mkdir(exist_ok=True)
     tl, total = timeline(r)
     # no low caption while a card already shows the same words: the spoken label (section 0) and the CTA
-    caps_tl = [(st, ln, sec, segs, None if (i == 0 or sec["part"] == "cta") else vo) for i, (st, ln, sec, segs, vo) in enumerate(tl)]
+    norm = lambda x: "".join(ch for ch in x.upper() if ch.isalnum() or ch == " ").split()
+    same_as_card = lambda sec: norm(sec["vo"]) == norm(r["hook_text"])  # spoken hook already on the hook card
+    caps_tl = [(st, ln, sec, segs, None if (i == 0 or sec["part"] == "cta" or same_as_card(sec)) else vo) for i, (st, ln, sec, segs, vo) in enumerate(tl)]
     v, caps, a = M.video(r, tl, work), captions(caps_tl, total, work), M.audio(r, tl, total, work)
     hook_end = next((st for st, _, sec, _, _ in tl if sec["part"] == "lock_in"), 3.2)  # hook card stays up through the spoken hook
     label = kinetic("FROM THE WORLD OF AFTER THE HUM", work / "k_label.mov", W, H, 0.085, 42, 3.2, FPS, stagger=0.05, box=True)
@@ -107,4 +110,4 @@ def build(r, out):
 
 
 if __name__ == "__main__":
-    build(M.REELS[0], pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "ws01_draft.mp4"))
+    build(M.REELS[0], pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "draft.mp4"))

@@ -1,0 +1,233 @@
+{
+ "title": "The Phones That Knew the Time",
+ "logline": "From the world of AFTER THE HUM: the night before every phone in Meridian screamed, 17-year-old repair apprentice Jun Arai pulls the batteries out of a tray of broken phones and locks up her kiosk. That night every dead screen lights up at once, warm to the touch, flashing the same time every seventeen seconds: 7:17. Her watch says 11:40. The next morning, at exactly 7:17, every phone in the city screamed.",
+ "hook_text": "THESE PHONES HAVE NO BATTERIES",
+ "cta_text": "GLITCH OR WARNING? COMMENT YOUR THEORY",
+ "narrator_voice": "Low, intimate and direct; restrained emotion and dry humor.",
+ "narrator_character": "nara",
+ "characters": [
+  {
+   "id": "jun",
+   "name": "Jun Arai",
+   "tags": "teenage girl, 17, feminine face, chin-length dense auburn curls, teal over-ear headphones around neck, yellow rain shell, narrow black gloves, analog wristwatch",
+   "voice": "Quick, precise and slightly breathless; technical ideas translated into simple comparisons.",
+   "bio": "A 17-year-old electronics apprentice who runs a tiny phone repair kiosk in Meridian.",
+   "on_screen": true
+  }
+ ],
+ "music": "Dark ambient night score: low drones, rain on a metal roof, a faint electronic pulse every few seconds like a phone vibrating in another room, slow building tension, a cold unresolved rise near the end. Instrumental only, no vocals.",
+ "shots": [
+  {
+   "id": 1,
+   "location": "Inside Jun's cramped phone repair kiosk in Meridian at night",
+   "framing": "Close-up of Jun's face in the vertical center of the frame, seen from across the repair bench, her face lit from below by a cold white glow, the top fifth of the frame is dark kiosk ceiling with hanging cables",
+   "characters": [
+    "jun"
+   ],
+   "background": "Pegboard of small tools and cables behind her, a dim warm desk lamp, rain streaks on the kiosk window",
+   "poses": [
+    "Jun stares down at the bench in disbelief, eyes wide, her face lit white from below",
+    "Jun leans closer, frowning, the white light on her face",
+    "Jun pulls back slightly, lips parted, the light flickering on her face",
+    "Jun holds very still, eyes fixed downward, breath held"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Rain on a metal kiosk roof, a soft electronic buzz, a faint tick."
+  },
+  {
+   "id": 2,
+   "location": "Jun's repair bench at night",
+   "framing": "Top-down close-up of a black rubber repair mat filling the frame, no people, no hands",
+   "characters": [],
+   "background": "A neat grid of nine old cracked smartphones lying face up on the black mat, three rows of three, their back covers removed and empty battery slots visible at the edges, a small pile of removed phone batteries in the bottom right corner, a few tiny screwdrivers. Every phone screen glows bright white and shows the same large digital clock time \"7:17\" in thin white digits. No people, no hands, no figures anywhere in the image",
+   "poses": [
+    "All nine screens glow bright white showing 7:17",
+    "All nine screens are completely black and dark, switched off",
+    "All nine screens glow bright white showing 7:17",
+    "All nine screens are completely black and dark, switched off"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "A soft synchronized electronic chirp, rain."
+  },
+  {
+   "id": 3,
+   "location": "A tiny phone repair kiosk on a rain-black Meridian street at night",
+   "framing": "Vertical medium-wide shot of the small lit kiosk from the street, Jun clearly visible inside behind the counter window, her face visible in the middle third of the frame",
+   "characters": [
+    "jun"
+   ],
+   "background": "Narrow kiosk with a hand-painted 'REPAIR' sign above the window, a half-open metal roller shutter, warm desk lamp inside, elevated rail track overhead in shadow, red brick walls, wet pavement reflections, no other people",
+   "poses": [
+    "Jun works at the counter inside, head bent over a phone",
+    "Jun looks up and out through the window at the rain",
+    "Jun reaches up toward the half-open roller shutter",
+    "Jun pauses with one hand on the shutter, glancing back at her bench"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Rain, a distant elevated train passing overhead, a metal shutter rattle."
+  },
+  {
+   "id": 4,
+   "location": "Inside Jun's phone repair kiosk at night",
+   "framing": "Medium close-up of Jun at her bench, her face clearly visible in the middle third of the frame, her hands and a phone low in frame",
+   "characters": [
+    "jun"
+   ],
+   "background": "Pegboard of tools, coils of cable, a warm desk lamp, a small pile of phone batteries on the bench",
+   "poses": [
+    "Jun pries the battery out of an open phone with a plastic pry tool, focused",
+    "Jun drops the battery onto the small pile, unimpressed",
+    "Jun lays the empty phone face up on the black mat",
+    "Jun switches off the desk lamp, her face in shadow"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Plastic clip snapping, a battery clacking onto a pile, a lamp switch click."
+  },
+  {
+   "id": 5,
+   "location": "Inside Jun's dark phone repair kiosk at night",
+   "framing": "Extreme close-up of a girl's wrist in a narrow black glove wearing an analog wristwatch, no face in frame",
+   "characters": [],
+   "background": "The wristwatch face shows the hour hand just before 12 and the minute hand pointing at 8, eleven forty. Dark bench below, a cold white glow reflected on the watch glass. No faces anywhere in the image",
+   "poses": [
+    "The watch face is lit by a cold white glow",
+    "The glow is gone, the watch face dim",
+    "The cold white glow returns on the watch glass",
+    "The watch face dim again, the second hand moving"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "A quiet watch ticking, rain."
+  },
+  {
+   "id": 6,
+   "location": "Inside Jun's dark phone repair kiosk at night",
+   "framing": "Close-up of Jun's face, centered in the middle third of the frame, lit from below by cold white screen light",
+   "characters": [
+    "jun"
+   ],
+   "background": "Dark kiosk, faint outlines of hanging cables and pegboard",
+   "poses": [
+    "Jun shakes her head slowly, skeptical",
+    "Jun mutters to herself, frowning hard",
+    "Jun narrows her eyes at the bench",
+    "Jun swallows, unsettled"
+   ],
+   "narration": "",
+   "line": {
+    "character": "jun",
+    "text": "No batteries. That's not possible."
+   },
+   "sfx": "Rain, a faint electronic hum."
+  },
+  {
+   "id": 7,
+   "location": "Inside Jun's dark phone repair kiosk at night",
+   "framing": "Medium close-up of Jun leaning over the bench, her face visible in the middle third, her gloved hand resting flat on a phone",
+   "characters": [
+    "jun"
+   ],
+   "background": "Dark kiosk, the glowing phones below light her face white",
+   "poses": [
+    "Jun touches the back of a glowing phone with two gloved fingers",
+    "Jun rests her whole palm flat on the phone, surprised",
+    "Jun pulls her hand back quickly, startled by the warmth",
+    "Jun stares at her own gloved palm"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "A soft tap on glass, a small sharp intake of breath."
+  },
+  {
+   "id": 8,
+   "location": "Inside Jun's dark phone repair kiosk at night",
+   "framing": "Close-up of Jun's face, centered, slightly low angle, holding one old cracked phone up beside her face, the screen facing away from camera",
+   "characters": [
+    "jun"
+   ],
+   "background": "Dark kiosk ceiling with hanging cables, cold white light from the phone",
+   "poses": [
+    "Jun holds the phone close and stares at its screen, serious",
+    "Jun turns the phone over, checking the empty battery slot",
+    "Jun looks from the phone up toward the window, uneasy",
+    "Jun lowers the phone slowly, eyes wide"
+   ],
+   "narration": "",
+   "line": {
+    "character": "jun",
+    "text": "Who set an alarm for seven seventeen?"
+   },
+   "sfx": "Rain, a faint electronic chirp."
+  },
+  {
+   "id": 9,
+   "location": "Inside Jun's dark phone repair kiosk at night",
+   "framing": "Vertical shot of the kiosk back wall, no people",
+   "characters": [],
+   "background": "A pegboard wall covered with rows of unplugged old phones, pagers and small radios hanging on hooks, their loose power cables dangling unconnected. Every small screen on the wall glows the same cold white at once. No people, no figures, no faces anywhere in the image",
+   "poses": [
+    "Every small screen on the wall glows cold white at once",
+    "Every screen on the wall is dark",
+    "Every small screen on the wall glows cold white at once",
+    "Every screen on the wall is dark, cables swaying slightly"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Many small electronic chirps in perfect unison, rain."
+  },
+  {
+   "id": 10,
+   "location": "Jun's phone repair kiosk at night",
+   "framing": "Medium shot of Jun standing in the kiosk doorway, her face clearly visible in the middle third of the frame, looking out at the empty street",
+   "characters": [
+    "jun"
+   ],
+   "background": "The dark kiosk behind her with a cold white glow from the bench, rain falling in the street, the elevated rail above",
+   "poses": [
+    "Jun stands in the doorway, hugging her arms, looking out at the rain",
+    "Jun glances back over her shoulder at the glowing bench",
+    "Jun pulls her teal headphones up over her ears",
+    "Jun stares out into the dark street, uneasy"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Rain on pavement, distant city hum."
+  },
+  {
+   "id": 11,
+   "location": "A crowded Meridian street on a grey rainy morning",
+   "framing": "Vertical wide shot down the street at commuter eye level, many small distant commuters with umbrellas, no close faces",
+   "characters": [],
+   "background": "Red brick buildings, elevated rail overhead, wet pavement, every commuter holding up a phone that glows the same bright white, people flinching and covering their ears, a large street clock on a pole showing 7:17",
+   "poses": [
+    "Commuters walk with umbrellas, phones in hand",
+    "Every phone flares bright white at once, commuters freeze",
+    "Commuters cover their ears, phones blazing white",
+    "The phones go dark, the street frozen and silent"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Morning traffic and rain, then a single harsh synchronized electronic tone from everywhere, then silence."
+  },
+  {
+   "id": 12,
+   "location": "A Meridian street corner on a grey rainy morning",
+   "framing": "Vertical close-up of a large black-and-white analog street clock mounted on a pole, the clock face filling the middle of the frame, no people",
+   "characters": [],
+   "background": "The clock hands show seven seventeen: the hour hand just past the 7, the minute hand just past the 3. Rain streaking past, an elevated rail and red brick buildings blurred behind, wet grey morning light. No people, no figures, no faces anywhere in the image",
+   "poses": [
+    "The clock reads 7:17 in the rain",
+    "The clock face flares with reflected cold white light",
+    "The clock reads 7:17 in the rain",
+    "The clock face flares with reflected cold white light"
+   ],
+   "narration": "",
+   "line": null,
+   "sfx": "Rain, a harsh synchronized electronic tone cutting to silence."
+  }
+ ]
+}
